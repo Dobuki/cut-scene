@@ -1,0 +1,26 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - uses: actions/checkout@v2      
+      - name: Hello world action step
+        id: hello
+        uses: jacklehamster/hello-world-javascript-action@v1.76
+        with:
+          who-to-greet: ${{ github.repository}}
+
+      - name: Commit files # transfer the new html files back into the repository
+        run: |
+          git config --local user.name "Dobuki Directory Generator"
+          git config --global user.email "dobuki-github-actions[bot]@users.noreply.github.com"          
+          git add .
+          git diff --quiet && git diff --staged --quiet || git commit -m "Updating dir.json"
+        
+      - name: Push changes # push the output folder to your repo
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
