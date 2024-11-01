@@ -2,10 +2,10 @@
   "scenes": [
     {
       "bg": [
-        "https%3A//cdn.dobuki.net/b0fa019ada09987a3de8bf852e40fb5dc983ae3ee2bf712b682445c7250ea453.jpg",
-        "https%3A//art.dobuki.net/data/image/cutscene/images/unknown/unknown/__big.jpg"
+        "https%3A//cdn.dobuki.net/c1fea66a93231b9e73380a177915cd87bd66f2c723740653201f61e7cb6fc927.jpg",
+        "https%3A//art.dobuki.net/data/image/cutscene/images/newgrounds/jacklehamster/71Qe7bz5bPL.jpg"
       ],
-      "text": "Testing 123",
+      "text": "Testing 1234",
       "audio": "",
       "repeat": false,
       "fade": true
@@ -26,5 +26,5 @@
     ]
   ],
   "id": "1639ab37-1034-4610-804c-0ef37d286189",
-  "updated": 1730442733253
+  "updated": 1730442886135
 }
