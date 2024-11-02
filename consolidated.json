@@ -1,22 +1,25 @@
 {
   "/data/default/dir-json.json": {
-    "md5": "271e88a6afa6c418c804de14067b52f5",
+    "md5": "32ff43f31f226e3d3f89395aa32bd5b8",
     "user/1639ab37-1034-4610-804c-0ef37d286189/cutscene.json": {
-      "sha": "7eca97980795805fa57caa2abf812101d3bf0803"
+      "sha": "72ed6373e601fb5a6fd962c9fd13d044223b6bca"
     }
   },
   "/data/default/dir.json": {
-    "md5": "271e88a6afa6c418c804de14067b52f5",
+    "md5": "3624f5d98bd860425c447bd7b7a99447",
+    "user/1639ab37-1034-4610-804c-0ef37d286189/cutscene.html": {
+      "sha": "bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f"
+    },
     "user/1639ab37-1034-4610-804c-0ef37d286189/cutscene.json": {
-      "sha": "7eca97980795805fa57caa2abf812101d3bf0803"
+      "sha": "72ed6373e601fb5a6fd962c9fd13d044223b6bca"
     }
   },
   "/data/default/user/1639ab37-1034-4610-804c-0ef37d286189/cutscene.json": {
     "scenes": [
       {
         "bg": [
-          "https%3A//cdn.dobuki.net/c1fea66a93231b9e73380a177915cd87bd66f2c723740653201f61e7cb6fc927.jpg",
-          "https%3A//art.dobuki.net/data/image/cutscene/images/newgrounds/jacklehamster/71Qe7bz5bPL.jpg"
+          "https%3A//cdn.dobuki.net/c95558b436be62900b115c3bd4b60695589f6b83152eadfcc19c50db43ad086c.png",
+          "https%3A//art.dobuki.net/data/image/cutscene/images/unknown/unknown/dobuki.png"
         ],
         "text": "Testing 1234",
         "audio": "",
@@ -36,34 +39,44 @@
       [
         "https%3A//cdn.dobuki.net/b0fa019ada09987a3de8bf852e40fb5dc983ae3ee2bf712b682445c7250ea453.jpg",
         "https%3A//art.dobuki.net/data/image/cutscene/images/unknown/unknown/__big.jpg"
+      ],
+      [
+        "https%3A//cdn.dobuki.net/c95558b436be62900b115c3bd4b60695589f6b83152eadfcc19c50db43ad086c.png",
+        "https%3A//art.dobuki.net/data/image/cutscene/images/unknown/unknown/dobuki.png"
       ]
     ],
     "id": "1639ab37-1034-4610-804c-0ef37d286189",
-    "updated": 3866475816
+    "updated": 3870783327
   },
   "/data/default/user/1639ab37-1034-4610-804c-0ef37d286189/dir-json.json": {
     "cutscene.json": {
-      "sha": "7eca97980795805fa57caa2abf812101d3bf0803"
+      "sha": "72ed6373e601fb5a6fd962c9fd13d044223b6bca"
     },
-    "md5": "9069d5f67579e434da4e26e41418f5f0"
+    "md5": "a5b141b9edf8ab3c354c0d098e1b9687"
   },
   "/data/default/user/1639ab37-1034-4610-804c-0ef37d286189/dir.json": {
-    "cutscene.json": {
-      "sha": "7eca97980795805fa57caa2abf812101d3bf0803"
+    "cutscene.html": {
+      "sha": "bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f"
     },
-    "md5": "9069d5f67579e434da4e26e41418f5f0"
+    "cutscene.json": {
+      "sha": "72ed6373e601fb5a6fd962c9fd13d044223b6bca"
+    },
+    "md5": "9bbb4bb7388090af963e74a7972e5ab2"
   },
   "/data/default/user/dir-json.json": {
     "1639ab37-1034-4610-804c-0ef37d286189/cutscene.json": {
-      "sha": "7eca97980795805fa57caa2abf812101d3bf0803"
+      "sha": "72ed6373e601fb5a6fd962c9fd13d044223b6bca"
     },
-    "md5": "d07cd758102d2f1f2976a33c0982b47d"
+    "md5": "aeafa201c31f2bd738c32bcf88741da7"
   },
   "/data/default/user/dir.json": {
-    "1639ab37-1034-4610-804c-0ef37d286189/cutscene.json": {
-      "sha": "7eca97980795805fa57caa2abf812101d3bf0803"
+    "1639ab37-1034-4610-804c-0ef37d286189/cutscene.html": {
+      "sha": "bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f"
     },
-    "md5": "d07cd758102d2f1f2976a33c0982b47d"
+    "1639ab37-1034-4610-804c-0ef37d286189/cutscene.json": {
+      "sha": "72ed6373e601fb5a6fd962c9fd13d044223b6bca"
+    },
+    "md5": "72f1acbacb02deabb11a5b2789aa7cad"
   },
   "/data/dir-json.json": {
     "md5": "8680a9f34cb6147189304c5d1da099cd",

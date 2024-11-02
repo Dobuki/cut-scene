@@ -1,6 +1,9 @@
 {
-  "cutscene.json": {
-    "sha": "7eca97980795805fa57caa2abf812101d3bf0803"
+  "cutscene.html": {
+    "sha": "bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f"
   },
-  "md5": "9069d5f67579e434da4e26e41418f5f0"
+  "cutscene.json": {
+    "sha": "72ed6373e601fb5a6fd962c9fd13d044223b6bca"
+  },
+  "md5": "9bbb4bb7388090af963e74a7972e5ab2"
 }

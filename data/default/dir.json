@@ -1,6 +1,9 @@
 {
-  "md5": "271e88a6afa6c418c804de14067b52f5",
+  "md5": "3624f5d98bd860425c447bd7b7a99447",
+  "user/1639ab37-1034-4610-804c-0ef37d286189/cutscene.html": {
+    "sha": "bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f"
+  },
   "user/1639ab37-1034-4610-804c-0ef37d286189/cutscene.json": {
-    "sha": "7eca97980795805fa57caa2abf812101d3bf0803"
+    "sha": "72ed6373e601fb5a6fd962c9fd13d044223b6bca"
   }
 }
