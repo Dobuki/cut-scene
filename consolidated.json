@@ -6,7 +6,7 @@
     }
   },
   "/data/default/dir.json": {
-    "md5": "1fc4467dc3a660fb9b6a44833743f06b",
+    "md5": "d482125304bef53454286f7035d0b4e2",
     "user/1639ab37-1034-4610-804c-0ef37d286189/cutscene.html": {
       "sha": "b7e4168f0f593428b501cb4711f7a3208b41ad21"
     },
@@ -15,6 +15,9 @@
     },
     "user/1639ab37-1034-4610-804c-0ef37d286189/dist/index.bin": {
       "sha": "10dc8dee615c4e1a16f12574f55f1e0a35b74e45"
+    },
+    "user/1bf34ea0-f91a-4c97-9e4a-32481293966b/index.html": {
+      "sha": "27447cb0cf12c61883682a6d3228ab2da301d0cd"
     }
   },
   "/data/default/user/1639ab37-1034-4610-804c-0ef37d286189/cutscene.json": {
@@ -75,6 +78,12 @@
     },
     "md5": "86721110d57c6420046b106c9e7f4d4d"
   },
+  "/data/default/user/1bf34ea0-f91a-4c97-9e4a-32481293966b/dir.json": {
+    "index.html": {
+      "sha": "27447cb0cf12c61883682a6d3228ab2da301d0cd"
+    },
+    "md5": "643225818a6cbbfe1669961d273f41e3"
+  },
   "/data/default/user/dir-json.json": {
     "1639ab37-1034-4610-804c-0ef37d286189/cutscene.json": {
       "sha": "5132fe002237ffe540ad202ec8a4536c06f47899"
@@ -91,7 +100,10 @@
     "1639ab37-1034-4610-804c-0ef37d286189/dist/index.bin": {
       "sha": "10dc8dee615c4e1a16f12574f55f1e0a35b74e45"
     },
-    "md5": "54ca528ccafa7e89b10a6f87ddc2dede"
+    "1bf34ea0-f91a-4c97-9e4a-32481293966b/index.html": {
+      "sha": "27447cb0cf12c61883682a6d3228ab2da301d0cd"
+    },
+    "md5": "fd1b40d14af3d67b200c04858a10dc55"
   },
   "/data/dir-json.json": {
     "md5": "8680a9f34cb6147189304c5d1da099cd",

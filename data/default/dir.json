@@ -1,5 +1,5 @@
 {
-  "md5": "1fc4467dc3a660fb9b6a44833743f06b",
+  "md5": "d482125304bef53454286f7035d0b4e2",
   "user/1639ab37-1034-4610-804c-0ef37d286189/cutscene.html": {
     "sha": "b7e4168f0f593428b501cb4711f7a3208b41ad21"
   },
@@ -8,5 +8,8 @@
   },
   "user/1639ab37-1034-4610-804c-0ef37d286189/dist/index.bin": {
     "sha": "10dc8dee615c4e1a16f12574f55f1e0a35b74e45"
+  },
+  "user/1bf34ea0-f91a-4c97-9e4a-32481293966b/index.html": {
+    "sha": "27447cb0cf12c61883682a6d3228ab2da301d0cd"
   }
 }
