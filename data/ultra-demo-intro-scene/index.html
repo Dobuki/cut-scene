@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- METADATA -->
     <script>
-      window.cutsceneVersion = 1730618234944;
+      window.cutsceneVersion = 1730618520476;
       function ensureSlash(url) {
         if (!url.endsWith("/")) {
           return url + "/";
@@ -19,7 +19,7 @@
             return;
           }
           const text = await result.text();
-          if (text.includes("window.cutsceneVersion = 1730618234944;")) {
+          if (text.includes("window.cutsceneVersion = 1730618520476;")) {
             console.log("canonical url https://cutscene.dobuki.net/data/ultra-demo-intro-scene is ready");
             window.location.href = canonicalUrl;
           }
