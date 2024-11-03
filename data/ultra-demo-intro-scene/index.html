@@ -11,19 +11,18 @@
           return url + "/";
         }
         return url;
-      }      
-      if (ensureSlash("https://cutscene.dobuki.net/data/ultra-demo-intro-scene") !== ensureSlash(window.location.href)) {
+      }
+      const canonicalUrl = ensureSlash("https://cutscene.dobuki.net/data/ultra-demo-intro-scene");
+      if (canonicalUrl !== ensureSlash(window.location.href)) {
         const interval = setInterval(async () => {
-          fetch("https://cutscene.dobuki.net/data/ultra-demo-intro-scene").then(async (result) => {
+          fetch(canonicalUrl).then(async (result) => {
             if (!result.ok) {
-              console.log("canonical url https://cutscene.dobuki.net/data/ultra-demo-intro-scene not ready");
               return;
             }
             const text = await result.text();
-            if (text.includes("window.generatedCutscene = " + window.cutsceneVersion + ";")) {
+            if (text.includes("window.cutsceneVersion = 2;")) {
               console.log("canonical url https://cutscene.dobuki.net/data/ultra-demo-intro-scene is ready");
-              const newUrl = "https://cutscene.dobuki.net/data/ultra-demo-intro-scene";
-              history.pushState(null, "", newUrl);
+              history.pushState(null, "", canonicalUrl);
               clearInterval(interval);
             }
           }).catch(() => {
