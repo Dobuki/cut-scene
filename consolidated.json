@@ -261,6 +261,12 @@
     },
     "md5": "aaf3a263a7d2b7e4e86582a8d6de20be"
   },
+  "/data/demo-scene/dir.json": {
+    "index.html": {
+      "sha": "d3176ea793526d40444f3ab8590706de112f7684"
+    },
+    "md5": "180af618214619e861f3d355fbbf42d4"
+  },
   "/data/dir-json.json": {
     "md5": "8680a9f34cb6147189304c5d1da099cd",
     "newgrounds/jacklehamster/1639ab37-1034-4610-804c-0ef37d286189.json": {
