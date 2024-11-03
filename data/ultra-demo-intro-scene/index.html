@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- METADATA -->
     <script>
-      window.cutsceneVersion = 1730617781224;
+      window.cutsceneVersion = 1730618234944;
       function ensureSlash(url) {
         if (!url.endsWith("/")) {
           return url + "/";
@@ -19,7 +19,7 @@
             return;
           }
           const text = await result.text();
-          if (text.includes("window.cutsceneVersion = 1730617781224;")) {
+          if (text.includes("window.cutsceneVersion = 1730618234944;")) {
             console.log("canonical url https://cutscene.dobuki.net/data/ultra-demo-intro-scene is ready");
             window.location.href = canonicalUrl;
           }
@@ -567,6 +567,63 @@
     </script>
   </head>
   <body>
+    <div
+      id="prompter"
+      style="display: none"
+      onmousedown="event.stopPropagation()"
+      onmouseup="event.stopPropagation()"
+      onkeydown="event.stopPropagation()"
+      onkeyup="event.stopPropagation()"
+    >
+      <div
+        style="
+          position: fixed;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 999;
+          width: 100vw;
+          height: 100vh;
+          top: 0;
+          left: 0;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+          "
+        >
+          <div class="prompt-dialog">
+            <div>
+              <label id="prompt-label" for="prompt-text">Enter text</label>
+            </div>
+            <div>
+              <textarea
+                style="
+                  width: 300px;
+                  height: 100px;
+                  border-radius: 10px;
+                  padding: 5px;
+                "
+                id="prompt-text"
+                placeholder="Enter your text"
+              ></textarea>
+            </div>
+            <div>
+              <button type="button" id="prompt-button" class="prompt-button">
+                OK
+              </button>
+              <button type="button" id="prompt-cancel" class="prompt-button">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="press-key">
       <div style="width: 100%; text-align: center">
         <div id="container" class="container" style="margin-top: 10px">
