@@ -261,6 +261,12 @@
     },
     "md5": "aaf3a263a7d2b7e4e86582a8d6de20be"
   },
+  "/data/demo-intro-scene/dir.json": {
+    "index.html": {
+      "sha": "9e428ec6e7d858985ab255fe987a197a8baa90fe"
+    },
+    "md5": "fa9029b0a02c4945a0bf5e60371cb039"
+  },
   "/data/demo-scene/dir.json": {
     "index.html": {
       "sha": "f670eff1cd7d13b9ec67aa4fde79406795d89973"
