@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- METADATA -->
+    <!-- version: 1730621942917 -->
     <script>
-      window.cutsceneVersion = 1730618520476;
       function ensureSlash(url) {
         if (!url.endsWith("/")) {
           return url + "/";
@@ -19,7 +19,7 @@
             return;
           }
           const text = await result.text();
-          if (text.includes("window.cutsceneVersion = 1730618520476;")) {
+          if (text.includes("version: 1730621942917")) {
             console.log("canonical url https://cutscene.dobuki.net/data/ultra-demo-intro-scene is ready");
             window.location.href = canonicalUrl;
           }
@@ -436,11 +436,87 @@
   ]
  ],
  "externalLink": "https://www.dobuki.net",
+ "availableImages": [
+  [
+   "https://art.dobuki.net/power-troll/cutscene/cutscene1.png"
+  ],
+  [
+   "https://art.dobuki.net/power-troll/cutscene/cutscene2.png"
+  ],
+  [
+   "https://art.dobuki.net/power-troll/cutscene/cutscene3.png"
+  ],
+  [
+   "https://art.dobuki.net/power-troll/cutscene/cutscene4.png"
+  ],
+  [
+   "https://art.dobuki.net/power-troll/cutscene/cutscene5.png"
+  ],
+  [
+   "https://art.dobuki.net/power-troll/cutscene/cutscene7.png"
+  ],
+  [
+   "https://art.dobuki.net/power-troll/cutscene/cutscene6.png"
+  ],
+  [
+   "https://art.dobuki.net/power-troll/cutscene/cutscene10.png"
+  ],
+  [
+   "https://art.dobuki.net/power-troll/cutscene/cutscene9.png"
+  ],
+  [
+   "https://art.dobuki.net/power-troll/cutscene/cutscene12.png"
+  ],
+  [
+   "https://art.dobuki.net/power-troll/cutscene/cutscene13.png"
+  ],
+  [
+   "https://art.dobuki.net/power-troll/cutscene/cutscene14.png"
+  ],
+  [
+   "https://art.dobuki.net/power-troll/cutscene/cutscene15.png"
+  ],
+  [
+   "https://art.dobuki.net/power-troll/cutscene/cutscene11.png"
+  ],
+  [
+   "https://art.dobuki.net/power-troll/cutscene/cutscene16.png"
+  ]
+ ],
+ "availableAudio": [
+  [
+   "https://art.dobuki.net/audio/trumpet.mp3"
+  ],
+  [
+   "https://art.dobuki.net/audio/darkness.mp3"
+  ],
+  [
+   "stop"
+  ]
+ ],
  "lockKey": "83dc46f6e07662836b6f839616fec2dc1b4fcc11d2c54ef9810657103efcb96d"
 }
     </script>
     <!-- CUTSCENE -->
     <style>
+      @font-face {
+        font-family: "Coffee";
+        src: url(https://cutscene.dobuki.net/fonts/Gluten-Bold.otf)
+          format("opentype");
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Gameboy";
+        src: url(https://cutscene.dobuki.net/fonts/early-gameboy.ttf)
+          format("truetype");
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Speech";
+        src: url(https://cutscene.dobuki.net/fonts/cat-comic.ttf)
+          format("truetype");
+        font-display: swap;
+      }
       html::-webkit-scrollbar {
         display: none;
       }
@@ -711,7 +787,7 @@
         "save",
         undefined,
         gameView,
-        fetchJsonFile,
+        async (url) => fetch(url).then((r) => r.text()),
         activatePlayer,
         audioExt,
         undefined,
@@ -761,5 +837,6 @@
 
     document.addEventListener("keydown", keyDown);
     document.addEventListener("click", onClick);
+    document.fonts.load('12pt "Gameboy"');
   </script>
 </html>
