@@ -15,6 +15,8 @@
         fetch("https://cutscene.dobuki.net/data/ultra-demo-intro-scene").then(result => {
           if (result.ok) {
             window.location.href = "https://cutscene.dobuki.net/data/ultra-demo-intro-scene";
+          } else {
+            console.log("canonical url https://cutscene.dobuki.net/data/ultra-demo-intro-scene not ready");
           }
         }).catch(() => {
           console.log("canonical url https://cutscene.dobuki.net/data/ultra-demo-intro-scene not ready");
