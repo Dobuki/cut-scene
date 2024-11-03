@@ -4,6 +4,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- METADATA -->
+    <script>
+      function ensureSlash(url) {
+        if (!url.endsWith("/")) {
+          return url + "/";
+        }
+        return url;
+      }      
+      if (ensureSlash("https://cutscene.dobuki.net/data/demo-scene") !== ensureSlash(window.location.href)) {
+        window.location.href = "https://cutscene.dobuki.net/data/demo-scene";
+        fetch("https://cutscene.dobuki.net/data/demo-scene").then(() => {
+          window.location = "https://cutscene.dobuki.net/data/demo-scene";
+        }).catch(() => {
+          console.log("canonical url https://cutscene.dobuki.net/data/demo-scene not ready");
+        });
+      }
+    </script>
     <title>Cutscene</title>
     <meta name="description" content="Knight Exposito arrives at the castle" />
     <meta name="keywords" content="cutscene" />
@@ -20,6 +36,7 @@
     <meta name="twitter:image" content="https://art.dobuki.net/power-troll/cutscene/cutscene1.png" />
     <meta name="twitter:site" content="@jacklehamster" />
     <meta name="twitter:creator" content="Anonymous" />
+    <link rel="canonical" href="https://cutscene.dobuki.net/data/demo-scene" />
     <link
       rel="icon"
       href="https://cutscene.dobuki.net/favicon.ico"
@@ -410,6 +427,7 @@
    "messeer"
   ]
  ],
+ "externalLink": "https://www.dobuki.net",
  "lockKey": "83dc46f6e07662836b6f839616fec2dc1b4fcc11d2c54ef9810657103efcb96d"
 }
     </script>
