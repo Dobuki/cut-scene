@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- METADATA -->
-    <!-- version: 985483d6219eeba6770971a7b9c7c95c01c2487029882b89a350c9ccefab29f2 -->
+    <!-- version: e78fb8ecbc1f40c691990d2e5e1cee63c9a10aa1ddabc6ce4d15117e82e97233 -->
     <script>
       function ensureSlash(url) {
         if (!url.endsWith("/")) {
@@ -19,7 +19,7 @@
             return;
           }
           const text = await result.text();
-          if (text.includes("version: 985483d6219eeba6770971a7b9c7c95c01c2487029882b89a350c9ccefab29f2")) {
+          if (text.includes("version: e78fb8ecbc1f40c691990d2e5e1cee63c9a10aa1ddabc6ce4d15117e82e97233")) {
             console.log("canonical url https://cutscene.dobuki.net/data/intro-cutscene is ready");
             window.location.href = canonicalUrl;
           }
@@ -31,7 +31,7 @@
     <title>The story of the Supernatural Power Troll</title>
     <meta name="description" content="Knight Exposito arrives at the castle" />
     <meta name="keywords" content="cutscene" />
-    <meta name="author" content="Jack Le Hamster" />
+    <meta name="author" content="jacklehamster" />
     <meta property="og:title" content="The story of the Supernatural Power Troll" />
     <meta property="og:description" content="Knight Exposito arrives at the castle" />
     <meta property="og:image" content="https://art.dobuki.net/power-troll/cutscene/cutscene1.png" />
@@ -43,7 +43,7 @@
     <meta name="twitter:description" content="Knight Exposito arrives at the castle" />
     <meta name="twitter:image" content="https://art.dobuki.net/power-troll/cutscene/cutscene1.png" />
     <meta name="twitter:site" content="@jacklehamster" />
-    <meta name="twitter:creator" content="Jack Le Hamster" />
+    <meta name="twitter:creator" content="jacklehamster" />
     <link rel="canonical" href="https://cutscene.dobuki.net/data/intro-cutscene" />
     <link
       rel="icon"
@@ -493,7 +493,7 @@
    "stop"
   ]
  ],
- "author": "Jack Le Hamster",
+ "author": "jacklehamster",
  "title": "The story of the Supernatural Power Troll",
  "lockKey": "83dc46f6e07662836b6f839616fec2dc1b4fcc11d2c54ef9810657103efcb96d"
 }
@@ -536,9 +536,10 @@
         margin: 0;
         padding: 0;
         text-shadow: #fc0 1px 0 10px;
-        color: violet;
+        color: #cccccc;
         transition: all 0.5s;
         height: 100px;
+        margin-top: 50px;
       }
       .cut-scene {
         margin: auto;
@@ -557,7 +558,7 @@
         user-select: none; /* Standard */
         border-radius: 25px;
         /*background-image: url(https://art.dobuki.net/images/dobuki.png);*/
-        background-size: 20%;
+        background-size: 60%;
         font-family: Speech;
 
         pointer-events: none;
@@ -604,6 +605,9 @@
       }
       .prompt-button {
         width: 120px;
+      }
+      #press-key {
+        transition: opacity 0.5s;
       }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
@@ -709,6 +713,7 @@
     <div id="press-key">
       <div style="width: 100%; text-align: center">
         <div id="container" class="container" style="margin-top: 10px">
+          <h1 class="title"></h1>
           <div
             id="game-view"
             class="game-view"
@@ -785,6 +790,15 @@
       container.style.borderRadius = "0px";
       container.style.marginTop = "0";
       gameView.style.display = "";
+
+      document.querySelector(".title").style.opacity = 0;
+      document.querySelector(".title").style.margin = 0;
+      document.querySelector(".title").style.height = 0;
+
+      document.querySelector("#press-key").style.opacity = 0;
+      setTimeout(() => {
+        document.querySelector("#press-key").style.opacity = 1;
+      }, 800);
 
       const activatePlayer = () => {};
       const audioExt = "mp3";
@@ -864,6 +878,14 @@
           e.stopPropagation();
         }
       });
+    }
+
+    {
+      document.querySelector("#cut-scene").style.backgroundImage = `url(${
+        JSON.parse(document.querySelector("#cutscene-data").textContent)
+          .scenes[0].bg
+      })`;
+      document.querySelector(".title").textContent = document.title;
     }
   </script>
 </html>
