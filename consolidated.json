@@ -1,4 +1,10 @@
 {
+  "/data/42dbdb73-3da4-46e4-83d8-c150ad982a2a/dir.json": {
+    "index.html": {
+      "sha": "790c92ba6b3c4d1667b2584002a27ed7d7c41b69"
+    },
+    "md5": "588d8a795a1e3cb2254afae07ec76999"
+  },
   "/data/default/dir-json.json": {
     "md5": "b4baa3fc9119767d2cd369a3060ccbef",
     "user/1639ab37-1034-4610-804c-0ef37d286189/cutscene.json": {
