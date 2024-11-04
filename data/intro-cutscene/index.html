@@ -4,9 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- METADATA -->
-    <!-- version: 93315373026cfe0c32faa51774b023afcf83f96de3cf3aebedb5bbef739edf99 -->
+    <!-- version: aa521fed1f44ec90ca35d28e9e3ba355cc292efa84b2cd7659ae128b4a133876 -->
     <script>
       function ensureSlash(url) {
+        url = url.split("?")[0].split("#")[0];
         if (!url.endsWith("/")) {
           return url + "/";
         }
@@ -19,7 +20,7 @@
             return;
           }
           const text = await result.text();
-          if (text.includes("version: 93315373026cfe0c32faa51774b023afcf83f96de3cf3aebedb5bbef739edf99")) {
+          if (text.includes("version: aa521fed1f44ec90ca35d28e9e3ba355cc292efa84b2cd7659ae128b4a133876")) {
             console.log("canonical url https://cutscene.dobuki.net/data/intro-cutscene is ready");
             window.location.href = canonicalUrl;
           }
@@ -27,19 +28,21 @@
           console.log("canonical url https://cutscene.dobuki.net/data/intro-cutscene not ready");
         });
       }
+      window.canonicalUrl = canonicalUrl;
+      window.canonicalVersion = "aa521fed1f44ec90ca35d28e9e3ba355cc292efa84b2cd7659ae128b4a133876";
     </script>
-    <title>The story of the Supernatural Power Troll</title>
+    <title>The Story of the Supernatural power troll</title>
     <meta name="description" content="Knight Exposito arrives at the castle" />
     <meta name="keywords" content="cutscene" />
     <meta name="author" content="@jacklehamster" />
-    <meta property="og:title" content="The story of the Supernatural Power Troll" />
+    <meta property="og:title" content="The Story of the Supernatural power troll" />
     <meta property="og:description" content="Knight Exposito arrives at the castle" />
     <meta property="og:image" content="https://art.dobuki.net/power-troll/cutscene/cutscene1.png" />
     <meta property="og:url" content="https://cutscene.dobuki.net/data/intro-cutscene" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="The story of the Supernatural Power Troll" />
+    <meta property="og:site_name" content="The Story of the Supernatural power troll" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="The story of the Supernatural Power Troll" />
+    <meta name="twitter:title" content="The Story of the Supernatural power troll" />
     <meta name="twitter:description" content="Knight Exposito arrives at the castle" />
     <meta name="twitter:image" content="https://art.dobuki.net/power-troll/cutscene/cutscene1.png" />
     <meta name="twitter:site" content="@jacklehamster" />
@@ -68,7 +71,7 @@
       {
         "@context": "https://schema.org",
         "@type": "CreativeWork",
-        "name": "The story of the Supernatural Power Troll",
+        "name": "The Story of the Supernatural power troll",
         "description": "Knight Exposito arrives at the castle",
         "url": "https://cutscene.dobuki.net/data/intro-cutscene",
         "image": {
@@ -432,8 +435,8 @@
   ]
  ],
  "author": "@jacklehamster",
- "title": "The story of the Supernatural Power Troll",
- "externalLink": "https://dobuki.net",
+ "title": "The Story of the Supernatural power troll",
+ "externalLink": "https://www.dobuki.net",
  "lockKey": "83dc46f6e07662836b6f839616fec2dc1b4fcc11d2c54ef9810657103efcb96d"
 }
     </script>
