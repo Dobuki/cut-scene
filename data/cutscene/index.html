@@ -41,14 +41,14 @@
     <meta name="author" content="@jacklehamster" />
     <meta property="og:title" content="Dobuki Cutscene Creator" />
     <meta property="og:description" content="click here to enter some text" />
-    <meta property="og:image" content="https://cdn.dobuki.net/0f881a6912ea9ce9b627856eebdc810684b3792400d9c5f9d2bb1d31bb5db19b.png" />
+    <meta property="og:image" content="https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-cover.png" />
     <meta property="og:url" content="https://cutscene.dobuki.net/data/cutscene" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Dobuki Cutscene Creator" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Dobuki Cutscene Creator" />
     <meta name="twitter:description" content="click here to enter some text" />
-    <meta name="twitter:image" content="https://cdn.dobuki.net/0f881a6912ea9ce9b627856eebdc810684b3792400d9c5f9d2bb1d31bb5db19b.png" />
+    <meta name="twitter:image" content="https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-cover.png" />
     <meta name="twitter:site" content="@jacklehamster" />
     <meta name="twitter:creator" content="@jacklehamster" />
     <link rel="canonical" href="https://cutscene.dobuki.net/data/cutscene" />
@@ -80,7 +80,7 @@
         "url": "https://cutscene.dobuki.net/data/cutscene",
         "image": {
           "@type": "ImageObject",
-          "url": "https://cdn.dobuki.net/0f881a6912ea9ce9b627856eebdc810684b3792400d9c5f9d2bb1d31bb5db19b.png",
+          "url": "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-cover.png",
           "width": 1000,
           "height": 600
         },
@@ -582,6 +582,112 @@
         Dobuki Cutscene Creator
       </h1>
     </div>
+
+    <!-- SOCIAL MEDIA -->
+    <div
+      id="social-media-icons"
+      style="position: absolute; left: 10px; bottom: 10px; color: #aaaaaa"
+    >
+      <div style="font-weight: bold">share:</div>
+      <img
+        id="social-media-x-icon"
+        alt="X"
+        style="width: 20px; height: 20px; cursor: pointer"
+        src="https://art.dobuki.net/social-media/x-icon.png"
+      />
+      <img
+        id="social-media-reddit-icon"
+        alt="reddit"
+        style="width: 20px; height: 20px; cursor: pointer"
+        src="https://art.dobuki.net/social-media/reddit.png"
+      />
+      <img
+        id="social-media-link-icon"
+        alt="link"
+        style="width: 20px; height: 20px; cursor: pointer"
+        src="https://art.dobuki.net/images/link.png"
+      />
+      <span
+        id="copied"
+        style="
+          font-size: 10pt;
+          color: #888;
+          position: absolute;
+          width: 100px;
+          bottom: -30px;
+          transition: bottom 0.5s;
+        "
+      >
+        📝 link copied</span
+      >
+    </div>
+    <script>
+      async function getCanonicalCutsceneUrl() {
+        function ensureSlash(url) {
+          url = url.split("?")[0].split("#")[0];
+          if (!url.endsWith("/")) {
+            return url + "/";
+          }
+          return url;
+        }
+        const canonicalUrl = window.canonicalUrl;
+        if (
+          canonicalUrl &&
+          canonicalUrl !== ensureSlash(window.location.href)
+        ) {
+          fetch(canonicalUrl)
+            .then(async (result) => {
+              if (!result.ok) {
+                return;
+              }
+              const text = await result.text();
+              if (text.includes(`version: ${window.canonicalVersion}`)) {
+                console.log("canonical url is ready");
+                return canonicalUrl;
+              }
+            })
+            .catch(() => {
+              console.log("canonical url not ready");
+            });
+        }
+        return window.location.href;
+      }
+      document
+        .querySelector("#social-media-x-icon")
+        .addEventListener("click", async () => {
+          const url = await getCanonicalCutsceneUrl();
+          const text = `A Cutscene - Dobuki Cutscene Creator`;
+          const hashtags = "DobukiCutscene";
+          const via = "jacklehamster";
+          const shareUrl = `https://x.com/intent/tweet?url=${encodeURIComponent(
+            url
+          )}&text=${encodeURIComponent(text)}&hashtags=${encodeURIComponent(
+            hashtags
+          )}&via=${encodeURIComponent(via)}`;
+          window.open(shareUrl, "_blank");
+        });
+      document
+        .querySelector("#social-media-reddit-icon")
+        .addEventListener("click", async () => {
+          const url = await getCanonicalCutsceneUrl();
+          const title = `A Cutscene - Dobuki Cutscene Creator`;
+          const shareUrl = `https://www.reddit.com/submit?url=${encodeURIComponent(
+            url
+          )}&title=${encodeURIComponent(title)}`;
+          window.open(shareUrl, "_blank");
+        });
+      document
+        .querySelector("#social-media-link-icon")
+        .addEventListener("click", async () => {
+          const url = await getCanonicalCutsceneUrl();
+          navigator.clipboard.writeText(url);
+          document.querySelector("#copied").style.bottom = "10px";
+          setTimeout(() => {
+            document.querySelector("#copied").style.bottom = "-30px";
+          }, 3000);
+        });
+    </script>
+    <!-- SOCIAL MEDIA -->
   </body>
   <script id="cut-scene-code" type="module">
     const module = await import(await sourceUrlPromise);
