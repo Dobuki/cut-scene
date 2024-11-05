@@ -737,12 +737,16 @@
       const targetPage = location.hash?.startsWith("#page-")
         ? parseInt(location.hash.replace("#page-", ""))
         : undefined;
+      if (targetPage) {
+        history.replaceState(null, "", location.href.split("#")[0]);
+      }
 
       if (location.hash?.startsWith("#passKey=")) {
         const passKey = location.hash.replace("#passKey=", "");
         const keys = JSON.parse(localStorage.getItem("cutscene-keys") ?? "{}");
         keys[passKey] = Date.now();
         localStorage.setItem("cutscene-keys", JSON.stringify(keys));
+        history.replaceState(null, "", location.href.split("#")[0]);
       }
 
       function findBg(scenes, pageIndex) {
