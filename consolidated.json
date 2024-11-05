@@ -5,6 +5,12 @@
     },
     "md5": "588d8a795a1e3cb2254afae07ec76999"
   },
+  "/data/cutscene/dir.json": {
+    "index.html": {
+      "sha": "1842485c1376a0e98390334b3c1c2f68d8e99247"
+    },
+    "md5": "02dca62f9445850c569b0dfa3f8845ba"
+  },
   "/data/default/dir-json.json": {
     "md5": "b4baa3fc9119767d2cd369a3060ccbef",
     "user/1639ab37-1034-4610-804c-0ef37d286189/cutscene.json": {
