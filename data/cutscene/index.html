@@ -22,7 +22,7 @@
               return;
             }
             const text = await result.text();
-            if (text.includes("window.canonicalVersion = "" + window.canonicalVersion + "";")) {
+            if (text.includes("window.canonicalVersion = '" + window.canonicalVersion + "';")) {
               console.log("canonical url is ready");
               window.location.href = canonicalUrl;
             }
@@ -734,9 +734,16 @@
     }
 
     {
-      const targetPage = location.hash
+      const targetPage = location.hash?.startsWith("#page-")
         ? parseInt(location.hash.replace("#page-", ""))
         : undefined;
+
+      if (location.hash?.startsWith("#passKey=")) {
+        const passKey = location.hash.replace("#passKey=", "");
+        const keys = JSON.parse(localStorage.getItem("cutscene-keys") ?? "{}");
+        keys[passKey] = Date.now();
+        localStorage.setItem("cutscene-keys", JSON.stringify(keys));
+      }
 
       function findBg(scenes, pageIndex) {
         for (let i = pageIndex; i >= 0; i--) {
