@@ -24,7 +24,7 @@
             const text = await result.text();
             if (text.includes("window.canonicalVersion = '" + window.canonicalVersion + "';")) {
               console.log("canonical url is ready");
-              window.location.href = canonicalUrl;
+              window.location.replace(canonicalUrl + window.location.search + window.location.hash);
             }
           }).catch(() => {
             console.log("canonical url not ready");
