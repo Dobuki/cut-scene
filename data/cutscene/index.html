@@ -4,9 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- METADATA -->
-    <!-- version: 4cc4d5e381888185f4f8e4fa2fbccba66dfcd02cea564ea3a3d04c0c34a2f22a -->
     <script>
-      if ("https://cutscene.dobuki.net/data/cutscene".length) {
+      window.canonicalVersion = "db083dbe0104494d838ae2e230210006fdd4de2f467b9a4b600c783cc24bdda8";
+      const finalUrl = "https://cutscene.dobuki.net/data/cutscene";
+      if (finalUrl.length) {
         function ensureSlash(url) {
           url = url.split("?")[0].split("#")[0];
           if (!url.endsWith("/")) {
@@ -14,26 +15,25 @@
           }
           return url;
         }
-        const canonicalUrl = ensureSlash("https://cutscene.dobuki.net/data/cutscene");
+        const canonicalUrl = ensureSlash(finalUrl);
         if (canonicalUrl !== ensureSlash(window.location.href)) {
           fetch(canonicalUrl).then(async (result) => {
             if (!result.ok) {
               return;
             }
             const text = await result.text();
-            if (text.includes("version: 4cc4d5e381888185f4f8e4fa2fbccba66dfcd02cea564ea3a3d04c0c34a2f22a")) {
-              console.log("canonical url https://cutscene.dobuki.net/data/cutscene is ready");
+            if (text.includes("window.canonicalVersion = "" + window.canonicalVersion + "";")) {
+              console.log("canonical url is ready");
               window.location.href = canonicalUrl;
             }
           }).catch(() => {
-            console.log("canonical url https://cutscene.dobuki.net/data/cutscene not ready");
+            console.log("canonical url not ready");
           });
         }
         window.canonicalUrl = canonicalUrl;
       } else {
         window.canonicalUrl = location.href;
       }
-      window.canonicalVersion = "4cc4d5e381888185f4f8e4fa2fbccba66dfcd02cea564ea3a3d04c0c34a2f22a";
     </script>
     <title>Dobuki Cutscene Creator</title>
     <meta name="description" content="click here to enter some text" />
@@ -114,7 +114,19 @@
    ],
    "audio": "",
    "voice": "",
-   "fade": false
+   "fade": false,
+   "choices": [
+    {
+     "label": "Choice 1"
+    },
+    {
+     "label": "Choice 2"
+    },
+    {
+     "label": "Choice 3"
+    }
+   ],
+   "choicesCount": 0
   },
   {
    "text": "Indie games have soul, creativity... \nbut sometimes they miss one powerful element.\n\n",
@@ -280,7 +292,7 @@
   ]
  ],
  "availableAudio": [],
- "updated": 1730843256802,
+ "updated": 1730844783725,
  "firstScene": "eac721e4-2978-476c-b708-899d671388ca",
  "title": "Dobuki Cutscene Creator",
  "externalLink": "https://cutscene.dobuki.net/data/cutscene",
