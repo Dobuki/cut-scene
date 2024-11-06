@@ -12,10 +12,10 @@
       }
     </script>
     <!-- METADATA -->
-    <!-- version: e6a168ed27adffcf12c2733c81e9ed1be5f57c189a81b3510ccc359960f41b54 -->
+    <!-- version: 20b9e26dea056e3bd4134e772015cc169a4bc78edbe73c282d37831370ba0603 -->
     <script>
       window.canonicalVersion =
-        "e6a168ed27adffcf12c2733c81e9ed1be5f57c189a81b3510ccc359960f41b54";
+        "20b9e26dea056e3bd4134e772015cc169a4bc78edbe73c282d37831370ba0603";
       const finalUrl = "https://cutscene.dobuki.net/data/cutscene";
       if (finalUrl.length && !window.noredirect) {
         function ensureSlash(url) {
@@ -50,14 +50,26 @@
       }
     </script>
     <title>Create your own cutscenes with Dobuki Cutscene Creator</title>
-    <meta name="description" content="click here to enter some text" />
+    <meta name="description" content="Create your own cutscenes with Dobuki Cutscene Creator.
+
+You can build a cutscene, host it on the web, and have it go straight to your game.
+
+Why stop at cutscenes? You could also build presentations, text-adventures, meme flip books...
+
+Have fun creating!" />
     <meta name="keywords" content="cutscene" />
     <meta name="author" content="@jacklehamster" />
     <meta
       property="og:title"
       content="Create your own cutscenes with Dobuki Cutscene Creator"
     />
-    <meta property="og:description" content="click here to enter some text" />
+    <meta property="og:description" content="Create your own cutscenes with Dobuki Cutscene Creator.
+
+You can build a cutscene, host it on the web, and have it go straight to your game.
+
+Why stop at cutscenes? You could also build presentations, text-adventures, meme flip books...
+
+Have fun creating!" />
     <meta
       property="og:image"
       content="https://cdn.dobuki.net/0f881a6912ea9ce9b627856eebdc810684b3792400d9c5f9d2bb1d31bb5db19b.png"
@@ -67,7 +79,13 @@
     <meta property="og:site_name" content="Create your own cutscenes with Dobuki Cutscene Creator" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Create your own cutscenes with Dobuki Cutscene Creator" />
-    <meta name="twitter:description" content="click here to enter some text" />
+    <meta name="twitter:description" content="Create your own cutscenes with Dobuki Cutscene Creator.
+
+You can build a cutscene, host it on the web, and have it go straight to your game.
+
+Why stop at cutscenes? You could also build presentations, text-adventures, meme flip books...
+
+Have fun creating!" />
     <meta
       name="twitter:image"
       content="https://cdn.dobuki.net/0f881a6912ea9ce9b627856eebdc810684b3792400d9c5f9d2bb1d31bb5db19b.png"
@@ -99,7 +117,13 @@
         "@context": "https://schema.org",
         "@type": "CreativeWork",
         "name": "Create your own cutscenes with Dobuki Cutscene Creator",
-        "description": "click here to enter some text",
+        "description": "Create your own cutscenes with Dobuki Cutscene Creator.
+
+You can build a cutscene, host it on the web, and have it go straight to your game.
+
+Why stop at cutscenes? You could also build presentations, text-adventures, meme flip books...
+
+Have fun creating!",
         "url": "https://cutscene.dobuki.net/data/cutscene",
         "image": {
           "@type": "ImageObject",
@@ -130,7 +154,7 @@
         "author": "@jacklehamster",
         "scenes": [
           {
-            "text": "click here to enter some text",
+            "text": "Create your own cutscenes with Dobuki Cutscene Creator.\n\nYou can build a cutscene, host it on the web, and have it go straight to your game.\n\nWhy stop at cutscenes? You could also build presentations, text-adventures, meme flip books...\n\nHave fun creating!",
             "bg": [
               "https://cdn.dobuki.net/0f881a6912ea9ce9b627856eebdc810684b3792400d9c5f9d2bb1d31bb5db19b.png",
               "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-cover.png"
@@ -264,7 +288,17 @@
             ],
             "audio": "",
             "voice": "",
-            "fade": false
+            "fade": false,
+            "choices": [
+              {
+                "label": "Watch from\nbeginning",
+                "next": "eac721e4-2978-476c-b708-899d671388ca"
+              },
+              {
+                "label": "Make your\ncutscene"
+              }
+            ],
+            "choicesCount": 2
           }
         ],
         "created": 1730793729718,
@@ -315,7 +349,7 @@
           ]
         ],
         "availableAudio": [],
-        "updated": 1730865059973,
+        "updated": 1730869822199,
         "firstScene": "eac721e4-2978-476c-b708-899d671388ca",
         "title": "Create your own cutscenes with Dobuki Cutscene Creator",
         "externalLink": "https://cutscene.dobuki.net/data/cutscene",
@@ -823,13 +857,20 @@
               closePrompt();
               resolve(null);
             };
+            const escapeToCancel = () => {
+              if (event.key === "Escape") {
+                cancel();
+              }
+            };
             promptCancel.textContent = options?.cancelLabel ?? "Cancel";
             promptButton.addEventListener("click", ok);
             promptCancel.addEventListener("click", cancel);
+            promptText.addEventListener("keydown", escapeToCancel);
             const closePrompt = () => {
               promptDialog.style.display = "none";
               promptButton.removeEventListener("click", ok);
               promptCancel.removeEventListener("click", cancel);
+              promptText.removeEventListener("keydown", escapeToCancel);
             };
           });
         },
