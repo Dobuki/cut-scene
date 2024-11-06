@@ -753,7 +753,7 @@ Have fun creating!",
         .querySelector("#social-media-x-icon")
         .addEventListener("click", async () => {
           const url = await getCanonicalCutsceneUrl();
-          const text = window.title;
+          const text = document.title;
           const hashtags = "DobukiCutscene";
           const via = "jacklehamster";
           const shareUrl = `https://x.com/intent/tweet?url=${encodeURIComponent(
@@ -767,7 +767,7 @@ Have fun creating!",
         .querySelector("#social-media-reddit-icon")
         .addEventListener("click", async () => {
           const url = await getCanonicalCutsceneUrl();
-          const title = window.title;
+          const title = document.title;
           const shareUrl = `https://www.reddit.com/submit?url=${encodeURIComponent(
             url
           )}&title=${encodeURIComponent(title)}`;
