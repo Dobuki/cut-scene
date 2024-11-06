@@ -25,11 +25,7 @@
                 return;
               }
               const text = await result.text();
-              if (
-                text.includes(
-                  "window.canonicalVersion = '" + window.canonicalVersion + "';"
-                )
-              ) {
+              if (text.includes("version: " + window.canonicalVersion)) {
                 console.log("canonical url is ready");
                 window.location.replace(
                   canonicalUrl + window.location.search + window.location.hash
