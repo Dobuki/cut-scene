@@ -315,6 +315,12 @@
       "sha": "50c9fb9071c6e62cd25347c7860f5d9374696bc5"
     }
   },
+  "/data/e282ad40-cc95-4639-b8ec-859896f077d6/dir.json": {
+    "index.html": {
+      "sha": "2c7d46e103e6b9db9960ee97c84eee8987a51eef"
+    },
+    "md5": "c2e45b1a41b59b579bd5ce4920445671"
+  },
   "/data/empty/dir.json": {
     "index.html": {
       "sha": "b6a92499a2eb37316163e4c0e6adb1dc6d5f082f"
