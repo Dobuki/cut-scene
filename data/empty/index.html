@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
@@ -12,10 +12,9 @@
       }
     </script>
     <!-- METADATA -->
-    <!-- version: 7d7817884710472bb0bc57c2e0cc05dcc0fb64982427e2b68229df4c61e89a92 -->
+    <!-- version:  -->
     <script>
-      window.canonicalVersion =
-        "7d7817884710472bb0bc57c2e0cc05dcc0fb64982427e2b68229df4c61e89a92";
+      window.canonicalVersion = "";
       const finalUrl = "https://cutscene.dobuki.net/data/empty";
       if (finalUrl.length && !window.noredirect) {
         function ensureSlash(url) {
@@ -49,7 +48,9 @@
         window.canonicalUrl = location.href;
       }
     </script>
-    <title>Blank Cutscene - Create your own cutscene with Dobuki Cutscene Creator</title>
+    <title>
+      Blank Cutscene - Create your own cutscene with Dobuki Cutscene Creator
+    </title>
     <meta name="description" content="click here to enter some text" />
     <meta name="keywords" content="cutscene" />
     <meta name="author" content="@jacklehamster" />
@@ -58,23 +59,20 @@
       content="Blank Cutscene - Create your own cutscene with Dobuki Cutscene Creator"
     />
     <meta property="og:description" content="click here to enter some text" />
-    <meta
-      property="og:image"
-      content=""
-    />
+    <meta property="og:image" content="" />
     <meta property="og:url" content="https://cutscene.dobuki.net/data/empty" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Blank Cutscene - Create your own cutscene with Dobuki Cutscene Creator" />
+    <meta
+      property="og:site_name"
+      content="Blank Cutscene - Create your own cutscene with Dobuki Cutscene Creator"
+    />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Blank Cutscene - Create your own cutscene with Dobuki Cutscene Creator" />
     <meta
-      name="description"
-      content="click here to enter some text"
+      name="twitter:title"
+      content="Blank Cutscene - Create your own cutscene with Dobuki Cutscene Creator"
     />
-    <meta
-      name="twitter:image"
-      content=""
-    />
+    <meta name="description" content="click here to enter some text" />
+    <meta name="twitter:image" content="" />
     <meta name="twitter:site" content="@jacklehamster" />
     <meta name="twitter:creator" content="@jacklehamster" />
     <link rel="canonical" href="https://cutscene.dobuki.net/data/empty" />
@@ -128,24 +126,7 @@
       window.generatedCutscene = true;
     </script>
     <script type="application/json" id="cutscene-data">
-      {
-        "id": "empty",
-        "scenes": [
-          {
-            "bg": "",
-            "text": "click here to enter some text",
-            "audio": "",
-            "repeat": false,
-            "fade": true
-          }
-        ],
-        "availableImages": [],
-        "availableAudio": [],
-        "author": "@jacklehamster",
-        "updated": 1730885803142,
-        "title": "Blank Cutscene - Create your own cutscene with Dobuki Cutscene Creator",
-        "lockKey": "83dc46f6e07662836b6f839616fec2dc1b4fcc11d2c54ef9810657103efcb96d"
-      }
+      {}
     </script>
     <!-- CUTSCENE -->
     <style>
@@ -752,8 +733,9 @@
         const background = location.href.startsWith("https://cdn.dobuki.net/")
           ? bgs[0]
           : bgs[bgs.length - 1];
-        document.querySelector("#cut-scene").style.backgroundImage =
-          `url(${background})`;
+        document.querySelector(
+          "#cut-scene"
+        ).style.backgroundImage = `url(${background})`;
       }
       document.querySelector("#page").textContent = targetPage
         ? `Page ${targetPage} / ${cutSceneData.scenes.length}`
