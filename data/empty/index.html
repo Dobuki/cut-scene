@@ -348,6 +348,9 @@
               <button type="button" id="prompt-button" class="prompt-button">
                 OK
               </button>
+              <button type="button" id="prompt-clear" class="prompt-button">
+                Clear
+              </button>
               <button type="button" id="prompt-cancel" class="prompt-button">
                 Cancel
               </button>
@@ -399,7 +402,11 @@
         font-family: Coffee;
       "
     >
-      <a href="https://cutscene.dobuki.net/data/cutscene/">
+      <a
+        rel="noopener"
+        target="_blank"
+        href="https://cutscene.dobuki.net/data/empty/#auto-start=1"
+      >
         <img
           style="width: 50px; height: 50px"
           alt="dobuki-logo"
@@ -425,7 +432,13 @@
     <!-- SOCIAL MEDIA -->
     <div
       id="social-media-icons"
-      style="position: absolute; left: 10px; bottom: 10px; color: #aaaaaa"
+      style="
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        color: #aaaaaa;
+        display: none;
+      "
     >
       <div style="font-weight: bold">share:</div>
       <img
@@ -464,9 +477,6 @@
       >
     </div>
     <script>
-      document.querySelector("#social-media-icons").style.display =
-        window.generatedCutscene ? "block" : "none";
-
       async function getCanonicalCutsceneUrl() {
         function ensureSlash(url) {
           url = url.split("?")[0].split("#")[0];
@@ -501,7 +511,7 @@
         .querySelector("#social-media-x-icon")
         .addEventListener("click", async () => {
           const url = await getCanonicalCutsceneUrl();
-          const text = window.title;
+          const text = document.title;
           const hashtags = "DobukiCutscene";
           const via = "jacklehamster";
           const shareUrl = `https://x.com/intent/tweet?url=${encodeURIComponent(
@@ -515,7 +525,7 @@
         .querySelector("#social-media-reddit-icon")
         .addEventListener("click", async () => {
           const url = await getCanonicalCutsceneUrl();
-          const title = window.title;
+          const title = document.title;
           const shareUrl = `https://www.reddit.com/submit?url=${encodeURIComponent(
             url
           )}&title=${encodeURIComponent(title)}`;
@@ -623,6 +633,7 @@
             const promptLabel = document.getElementById("prompt-label");
             const promptText = document.getElementById("prompt-text");
             const promptButton = document.getElementById("prompt-button");
+            const promptClear = document.getElementById("prompt-clear");
             const promptCancel = document.getElementById("prompt-cancel");
             promptLabel.textContent = message;
             promptText.value = defaultValue;
@@ -633,6 +644,10 @@
             const ok = () => {
               closePrompt();
               resolve(promptText.value);
+            };
+            const clear = () => {
+              promptText.value = "";
+              ok();
             };
             const cancel = () => {
               closePrompt();
@@ -645,11 +660,13 @@
             };
             promptCancel.textContent = options?.cancelLabel ?? "Cancel";
             promptButton.addEventListener("click", ok);
+            promptClear.addEventListener("click", clear);
             promptCancel.addEventListener("click", cancel);
             promptText.addEventListener("keydown", escapeToCancel);
             const closePrompt = () => {
               promptDialog.style.display = "none";
               promptButton.removeEventListener("click", ok);
+              promptClear.removeEventListener("click", clear);
               promptCancel.removeEventListener("click", cancel);
               promptText.removeEventListener("keydown", escapeToCancel);
             };
@@ -660,7 +677,7 @@
         false,
         compress,
         extract,
-        JSON.parse(document.querySelector("#cutscene-data").textContent),
+        cutSceneData,
         window.generatedCutscene
       );
       document.querySelector("#social-media-icons").style.display = "none";
@@ -707,7 +724,23 @@
     let cutSceneData = JSON.parse(
       document.querySelector("#cutscene-data").textContent
     );
+
+    //  if there's no cutscene data, try to get it from localStorage
+    if (!cutSceneData.id) {
+      const newSceneIds = JSON.parse(
+        localStorage.getItem("new-cutscene-ids") ?? "[]"
+      );
+      if (newSceneIds.length) {
+        cutSceneData.id = newSceneIds[newSceneIds.length - 1];
+      }
+    }
+
     cutSceneData = getCutsceneFromLocalStorage(cutSceneData.id) ?? cutSceneData;
+
+    document.querySelector("#social-media-icons").style.display =
+      window.generatedCutscene && cutSceneData.scenes?.length
+        ? "block"
+        : "none";
 
     const hashParams = location.hash?.startsWith("#")
       ? new URLSearchParams(location.hash.substring(1))
