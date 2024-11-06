@@ -919,7 +919,7 @@ Have fun creating!",
         false,
         compress,
         extract,
-        JSON.parse(document.querySelector("#cutscene-data").textContent),
+        cutSceneData,
         window.generatedCutscene
       );
       document.querySelector("#social-media-icons").style.display = "none";
@@ -966,6 +966,17 @@ Have fun creating!",
     let cutSceneData = JSON.parse(
       document.querySelector("#cutscene-data").textContent
     );
+
+    //  if there's no cutscene data, try to get it from localStorage
+    if (!cutSceneData.id) {
+      const newSceneIds = JSON.parse(
+        localStorage.getItem("new-cutscene-ids") ?? "[]"
+      );
+      if (newSceneIds.length) {
+        cutSceneData.id = newSceneIds[newSceneIds.length - 1];
+      }
+    }
+
     cutSceneData = getCutsceneFromLocalStorage(cutSceneData.id) ?? cutSceneData;
 
     document.querySelector("#social-media-icons").style.display =
