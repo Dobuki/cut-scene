@@ -3,13 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      if (location.hash?.startsWith("#")) {
+        const hashParams = new URLSearchParams(location.hash.substring(1));
+        if (hashParams.get("noredirect")) {
+          window.noredirect = true;
+        }
+      }
+    </script>
     <!-- METADATA -->
-    <!-- version: 1212880e15721ff1db0a93799349734191786db050d196f92573bb0bd4d03c1e -->
+    <!-- version: e6a168ed27adffcf12c2733c81e9ed1be5f57c189a81b3510ccc359960f41b54 -->
     <script>
       window.canonicalVersion =
-        "1212880e15721ff1db0a93799349734191786db050d196f92573bb0bd4d03c1e";
+        "e6a168ed27adffcf12c2733c81e9ed1be5f57c189a81b3510ccc359960f41b54";
       const finalUrl = "https://cutscene.dobuki.net/data/cutscene";
-      if (finalUrl.length) {
+      if (finalUrl.length && !window.noredirect) {
         function ensureSlash(url) {
           url = url.split("?")[0].split("#")[0];
           if (!url.endsWith("/")) {
@@ -45,7 +53,10 @@
     <meta name="description" content="click here to enter some text" />
     <meta name="keywords" content="cutscene" />
     <meta name="author" content="@jacklehamster" />
-    <meta property="og:title" content="Create your own cutscenes with Dobuki Cutscene Creator" />
+    <meta
+      property="og:title"
+      content="Create your own cutscenes with Dobuki Cutscene Creator"
+    />
     <meta property="og:description" content="click here to enter some text" />
     <meta
       property="og:image"
@@ -231,7 +242,7 @@
           {
             "text": "Go beyond games.\nUse it to intro a video, an article, your website...",
             "bg": [
-              "https://cdn.dobuki.net/4db6c1bf6fabf83a1c281949022b28e3a30a016239a4690378309eb0309587b6.png",
+              "https://cdn.dobuki.net/6e9a6f52a103f2571c928e4119212171c8699bdbfd68513c74d3ce53df08cf83.png",
               "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool9.png"
             ],
             "audio": "",
@@ -304,7 +315,7 @@
           ]
         ],
         "availableAudio": [],
-        "updated": 1730860035088,
+        "updated": 1730865059973,
         "firstScene": "eac721e4-2978-476c-b708-899d671388ca",
         "title": "Create your own cutscenes with Dobuki Cutscene Creator",
         "externalLink": "https://cutscene.dobuki.net/data/cutscene",
@@ -354,19 +365,20 @@
         font-family: Speech;
       }
       .title {
-        margin: 0;
         padding: 0;
         text-shadow: #fc0 1px 0 10px;
         color: #cccccc;
         transition: all 0.5s;
-        height: 60px;
         margin-top: 50px;
+        height: 40px;
         font-family: Speech;
       }
       .author {
         margin: 0;
         padding: 0;
         color: #999999;
+        height: 30px;
+        margin-top: 30px;
         transition: all 0.5s;
       }
       .cut-scene {
@@ -430,7 +442,7 @@
         width: 120px;
       }
       #press-key {
-        transition: opacity 0.5s;
+        transition: opacity 0.2s;
       }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
@@ -572,7 +584,7 @@
         font-family: Coffee;
       "
     >
-      <a href="https://dobuki.net">
+      <a href="https://cutscene.dobuki.net/data/cutscene/">
         <img
           style="width: 50px; height: 50px"
           alt="dobuki-logo"
@@ -674,7 +686,7 @@
         .querySelector("#social-media-x-icon")
         .addEventListener("click", async () => {
           const url = await getCanonicalCutsceneUrl();
-          const text = `A Cutscene - Dobuki Cutscene Creator`;
+          const text = window.title;
           const hashtags = "DobukiCutscene";
           const via = "jacklehamster";
           const shareUrl = `https://x.com/intent/tweet?url=${encodeURIComponent(
@@ -688,7 +700,7 @@
         .querySelector("#social-media-reddit-icon")
         .addEventListener("click", async () => {
           const url = await getCanonicalCutsceneUrl();
-          const title = `A Cutscene - Dobuki Cutscene Creator`;
+          const title = window.title;
           const shareUrl = `https://www.reddit.com/submit?url=${encodeURIComponent(
             url
           )}&title=${encodeURIComponent(title)}`;
@@ -860,22 +872,31 @@
       });
     }
 
+    //  Check if the cutscene has been saved in the local storage
+    function getCutsceneFromLocalStorage(id) {
+      if (!id) {
+        return undefined;
+      }
+      const cutSceneDatas = JSON.parse(
+        localStorage.getItem("saved-cutscenes") ?? "{}"
+      );
+      return cutSceneDatas[id];
+    }
+    let cutSceneData = JSON.parse(
+      document.querySelector("#cutscene-data").textContent
+    );
+    cutSceneData = getCutsceneFromLocalStorage(cutSceneData.id) ?? cutSceneData;
+
+    const hashParams = location.hash?.startsWith("#")
+      ? new URLSearchParams(location.hash.substring(1))
+      : new URLSearchParams();
+    if (hashParams) {
+      history.replaceState(null, "", location.href.split("#")[0]);
+    }
+
     {
-      const targetPage = location.hash?.startsWith("#page-")
-        ? parseInt(location.hash.replace("#page-", ""))
-        : undefined;
-      if (targetPage) {
-        history.replaceState(null, "", location.href.split("#")[0]);
-      }
-
-      if (location.hash?.startsWith("#passKey=")) {
-        const passKey = location.hash.replace("#passKey=", "");
-        const keys = JSON.parse(localStorage.getItem("cutscene-keys") ?? "{}");
-        keys[passKey] = Date.now();
-        localStorage.setItem("cutscene-keys", JSON.stringify(keys));
-        history.replaceState(null, "", location.href.split("#")[0]);
-      }
-
+      //  Check if the hash contains a page number
+      const targetPage = parseInt(hashParams.get("page"));
       function findBg(scenes, pageIndex) {
         for (let i = pageIndex; i >= 0; i--) {
           if (scenes[i].bg) {
@@ -884,10 +905,7 @@
         }
       }
 
-      const scenes = JSON.parse(
-        document.querySelector("#cutscene-data").textContent
-      ).scenes;
-      const bg = findBg(scenes, targetPage ? targetPage - 1 : 0);
+      const bg = findBg(cutSceneData.scenes, targetPage ? targetPage - 1 : 0);
       if (bg) {
         const bgs = Array.isArray(bg) ? bg : [bg];
         const background = location.href.startsWith("https://cdn.dobuki.net/")
@@ -897,11 +915,25 @@
           `url(${background})`;
       }
       document.querySelector("#page").textContent = targetPage
-        ? `Page ${targetPage} / ${scenes.length}`
+        ? `Page ${targetPage} / ${cutSceneData.scenes.length}`
         : "";
+    }
+
+    //  Check if the hash contains a passKey
+    const passKey = hashParams.get("passKey");
+    if (passKey) {
+      const keys = JSON.parse(localStorage.getItem("cutscene-keys") ?? "{}");
+      keys[passKey] = Date.now();
+      localStorage.setItem("cutscene-keys", JSON.stringify(keys));
+    }
+
+    {
       document.querySelector(".title").textContent = document.title;
       document.querySelector(".author").textContent =
         document.querySelector("meta[name=author]").content;
+    }
+    if (hashParams.get("auto-start")) {
+      startGame();
     }
   </script>
 </html>
