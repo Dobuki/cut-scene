@@ -4,9 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- METADATA -->
-    <!-- version: db083dbe0104494d838ae2e230210006fdd4de2f467b9a4b600c783cc24bdda8 -->
+    <!-- version: 17d76adff2c28c2a3973279e9876c58dee96219e7f93e25442bc253b1a4020c0 -->
     <script>
-      window.canonicalVersion = "db083dbe0104494d838ae2e230210006fdd4de2f467b9a4b600c783cc24bdda8";
+      window.canonicalVersion =
+        "17d76adff2c28c2a3973279e9876c58dee96219e7f93e25442bc253b1a4020c0";
       const finalUrl = "https://cutscene.dobuki.net/data/cutscene";
       if (finalUrl.length) {
         function ensureSlash(url) {
@@ -18,18 +19,26 @@
         }
         const canonicalUrl = ensureSlash(finalUrl);
         if (canonicalUrl !== ensureSlash(window.location.href)) {
-          fetch(canonicalUrl).then(async (result) => {
-            if (!result.ok) {
-              return;
-            }
-            const text = await result.text();
-            if (text.includes("window.canonicalVersion = '" + window.canonicalVersion + "';")) {
-              console.log("canonical url is ready");
-              window.location.replace(canonicalUrl + window.location.search + window.location.hash);
-            }
-          }).catch(() => {
-            console.log("canonical url not ready");
-          });
+          fetch(canonicalUrl)
+            .then(async (result) => {
+              if (!result.ok) {
+                return;
+              }
+              const text = await result.text();
+              if (
+                text.includes(
+                  "window.canonicalVersion = '" + window.canonicalVersion + "';"
+                )
+              ) {
+                console.log("canonical url is ready");
+                window.location.replace(
+                  canonicalUrl + window.location.search + window.location.hash
+                );
+              }
+            })
+            .catch(() => {
+              console.log("canonical url not ready");
+            });
         }
         window.canonicalUrl = canonicalUrl;
       } else {
@@ -42,14 +51,20 @@
     <meta name="author" content="@jacklehamster" />
     <meta property="og:title" content="Dobuki Cutscene Creator" />
     <meta property="og:description" content="click here to enter some text" />
-    <meta property="og:image" content="https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-cover.png" />
+    <meta
+      property="og:image"
+      content="https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-cover.png"
+    />
     <meta property="og:url" content="https://cutscene.dobuki.net/data/cutscene" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Dobuki Cutscene Creator" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Dobuki Cutscene Creator" />
     <meta name="twitter:description" content="click here to enter some text" />
-    <meta name="twitter:image" content="https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-cover.png" />
+    <meta
+      name="twitter:image"
+      content="https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-cover.png"
+    />
     <meta name="twitter:site" content="@jacklehamster" />
     <meta name="twitter:creator" content="@jacklehamster" />
     <link rel="canonical" href="https://cutscene.dobuki.net/data/cutscene" />
@@ -96,209 +111,209 @@
           }
         }
       }
-    </script>  
-  <!-- METADATA -->
+    </script>
+    <!-- METADATA -->
     <!-- CUTSCENE -->
     <script>
       window.generatedCutscene = true;
     </script>
     <script type="application/json" id="cutscene-data">
-    {
- "id": "cutscene",
- "author": "@jacklehamster",
- "scenes": [
-  {
-   "text": "click here to enter some text",
-   "bg": [
-    "https://cdn.dobuki.net/0f881a6912ea9ce9b627856eebdc810684b3792400d9c5f9d2bb1d31bb5db19b.png",
-    "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-cover.png"
-   ],
-   "audio": "",
-   "voice": "",
-   "fade": false,
-   "choices": [
-    {
-     "label": "Choice 1"
-    },
-    {
-     "label": "Choice 2"
-    },
-    {
-     "label": "Choice 3"
-    }
-   ],
-   "choicesCount": 0
-  },
-  {
-   "text": "Indie games have soul, creativity... \nbut sometimes they miss one powerful element.\n\n",
-   "bg": [
-    "https://cdn.dobuki.net/4ef1a31aeea9be3de666f03d1949c2323eeb5144a352e09c0878475b4c46951f.png",
-    "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool1.png"
-   ],
-   "audio": "",
-   "repeat": false,
-   "fade": true,
-   "id": "eac721e4-2978-476c-b708-899d671388ca"
-  },
-  {
-   "text": "THE STORY",
-   "bg": [
-    "https://cdn.dobuki.net/e03e89bd1c9cc9e76e2608abf3ca85f89ab15dfbda8d684efe165f6d4cc27483.png",
-    "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool2.png"
-   ],
-   "audio": "",
-   "voice": "",
-   "fade": false
-  },
-  {
-   "text": "A story hooks players.\nIt builds an emotional connection to your game.",
-   "bg": [
-    "https://cdn.dobuki.net/98b63c413ae5c5628df67fde8961910edec5cd17057b17b9c0e5b853d78cf004.png",
-    "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool3.png"
-   ],
-   "audio": "",
-   "voice": "",
-   "fade": false
-  },
-  {
-   "text": "Want a simple way to include your story?\nEnter: Cutscenes.",
-   "bg": [
-    "https://cdn.dobuki.net/762a0943cf68b0387956c4051b27ad2d96c277fc015540940ffc67e4e59ec391.png",
-    "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool4.png"
-   ],
-   "audio": "",
-   "voice": "",
-   "fade": false
-  },
-  {
-   "text": "But coding cutscenes in-game can be a pain...",
-   "bg": [
-    "https://cdn.dobuki.net/012a97264f7c90f2d3c2110ebd7841b74cc0f152aa787a1166e542a14f8045e1.png",
-    "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool5.png"
-   ],
-   "audio": "",
-   "voice": "",
-   "fade": false
-  },
-  {
-   "text": "That's why I built “Dobuki Cutscene Creator.”",
-   "bg": [
-    "https://cdn.dobuki.net/2908d8d9954d0ee3c010d1e608a1e3d3232d414da6d1e6b2b444f8111a8672e9.png",
-    "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool6.png"
-   ],
-   "audio": "",
-   "voice": "",
-   "fade": false
-  },
-  {
-   "text": "It’s for making cutscenes for web games.\nquick, easy, shareable.",
-   "bg": "",
-   "audio": "",
-   "voice": "",
-   "fade": false
-  },
-  {
-   "text": "Build your scene, set your exit link, and share it.",
-   "bg": [
-    "https://cdn.dobuki.net/32a0b5a1a903d01d8a7bd8cb6c9be962c19f8f1125275991ad3012e1f122b6a3.png",
-    "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool7.png"
-   ],
-   "audio": "",
-   "voice": "",
-   "fade": false
-  },
-  {
-   "text": "Boom – you’ve got a dynamic intro for your game!",
-   "bg": [
-    "https://cdn.dobuki.net/2ed9724cbcddec2bc4825d09d7518866683a1eff9cd123ceab9dec49b5e1c269.png",
-    "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool8.png"
-   ],
-   "audio": "",
-   "voice": "",
-   "fade": false
-  },
-  {
-   "text": "Go beyond games.\nUse it to intro a video, an article, your website...",
-   "bg": [
-    "https://cdn.dobuki.net/4db6c1bf6fabf83a1c281949022b28e3a30a016239a4690378309eb0309587b6.png",
-    "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool9.png"
-   ],
-   "audio": "",
-   "voice": "",
-   "fade": false
-  },
-  {
-   "text": "Even make it a comic book, a presentation, a choose-your-own adventure!",
-   "bg": "",
-   "audio": "",
-   "voice": "",
-   "fade": false
-  },
-  {
-   "text": "Have fun creating, and share your scenes! #DobukiCutscene",
-   "bg": [
-    "https://cdn.dobuki.net/2ed61117be4eab0e10ced2b17f7f7ca419575cfc7ae1ca05d425ecb1379f0239.png",
-    "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool10.png"
-   ],
-   "audio": "",
-   "voice": "",
-   "fade": false
-  }
- ],
- "created": 1730793729718,
- "availableImages": [
-  [
-   "https://cdn.dobuki.net/4ef1a31aeea9be3de666f03d1949c2323eeb5144a352e09c0878475b4c46951f.png",
-   "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool1.png"
-  ],
-  [
-   "https://cdn.dobuki.net/e03e89bd1c9cc9e76e2608abf3ca85f89ab15dfbda8d684efe165f6d4cc27483.png",
-   "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool2.png"
-  ],
-  [
-   "https://cdn.dobuki.net/0f881a6912ea9ce9b627856eebdc810684b3792400d9c5f9d2bb1d31bb5db19b.png",
-   "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-cover.png"
-  ],
-  [
-   "https://cdn.dobuki.net/98b63c413ae5c5628df67fde8961910edec5cd17057b17b9c0e5b853d78cf004.png",
-   "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool3.png"
-  ],
-  [
-   "https://cdn.dobuki.net/762a0943cf68b0387956c4051b27ad2d96c277fc015540940ffc67e4e59ec391.png",
-   "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool4.png"
-  ],
-  [
-   "https://cdn.dobuki.net/012a97264f7c90f2d3c2110ebd7841b74cc0f152aa787a1166e542a14f8045e1.png",
-   "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool5.png"
-  ],
-  [
-   "https://cdn.dobuki.net/2908d8d9954d0ee3c010d1e608a1e3d3232d414da6d1e6b2b444f8111a8672e9.png",
-   "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool6.png"
-  ],
-  [
-   "https://cdn.dobuki.net/32a0b5a1a903d01d8a7bd8cb6c9be962c19f8f1125275991ad3012e1f122b6a3.png",
-   "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool7.png"
-  ],
-  [
-   "https://cdn.dobuki.net/2ed9724cbcddec2bc4825d09d7518866683a1eff9cd123ceab9dec49b5e1c269.png",
-   "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool8.png"
-  ],
-  [
-   "https://cdn.dobuki.net/4db6c1bf6fabf83a1c281949022b28e3a30a016239a4690378309eb0309587b6.png",
-   "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool9.png"
-  ],
-  [
-   "https://cdn.dobuki.net/2ed61117be4eab0e10ced2b17f7f7ca419575cfc7ae1ca05d425ecb1379f0239.png",
-   "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool10.png"
-  ]
- ],
- "availableAudio": [],
- "updated": 1730844783725,
- "firstScene": "eac721e4-2978-476c-b708-899d671388ca",
- "title": "Dobuki Cutscene Creator",
- "externalLink": "https://cutscene.dobuki.net/data/cutscene",
- "lockKey": "83dc46f6e07662836b6f839616fec2dc1b4fcc11d2c54ef9810657103efcb96d"
-}
+      {
+        "id": "cutscene",
+        "author": "@jacklehamster",
+        "scenes": [
+          {
+            "text": "click here to enter some text",
+            "bg": [
+              "https://cdn.dobuki.net/0f881a6912ea9ce9b627856eebdc810684b3792400d9c5f9d2bb1d31bb5db19b.png",
+              "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-cover.png"
+            ],
+            "audio": "",
+            "voice": "",
+            "fade": false,
+            "choices": [
+              {
+                "label": "Choice 1"
+              },
+              {
+                "label": "Choice 2"
+              },
+              {
+                "label": "Choice 3"
+              }
+            ],
+            "choicesCount": 0
+          },
+          {
+            "text": "Indie games have soul, creativity... \nbut sometimes they miss one powerful element.\n\n",
+            "bg": [
+              "https://cdn.dobuki.net/4ef1a31aeea9be3de666f03d1949c2323eeb5144a352e09c0878475b4c46951f.png",
+              "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool1.png"
+            ],
+            "audio": "",
+            "repeat": false,
+            "fade": true,
+            "id": "eac721e4-2978-476c-b708-899d671388ca"
+          },
+          {
+            "text": "THE STORY",
+            "bg": [
+              "https://cdn.dobuki.net/e03e89bd1c9cc9e76e2608abf3ca85f89ab15dfbda8d684efe165f6d4cc27483.png",
+              "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool2.png"
+            ],
+            "audio": "",
+            "voice": "",
+            "fade": false
+          },
+          {
+            "text": "A story hooks players.\nIt builds an emotional connection to your game.",
+            "bg": [
+              "https://cdn.dobuki.net/98b63c413ae5c5628df67fde8961910edec5cd17057b17b9c0e5b853d78cf004.png",
+              "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool3.png"
+            ],
+            "audio": "",
+            "voice": "",
+            "fade": false
+          },
+          {
+            "text": "Want a simple way to include your story?\nEnter: Cutscenes.",
+            "bg": [
+              "https://cdn.dobuki.net/762a0943cf68b0387956c4051b27ad2d96c277fc015540940ffc67e4e59ec391.png",
+              "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool4.png"
+            ],
+            "audio": "",
+            "voice": "",
+            "fade": false
+          },
+          {
+            "text": "But coding cutscenes in-game can be a pain...",
+            "bg": [
+              "https://cdn.dobuki.net/012a97264f7c90f2d3c2110ebd7841b74cc0f152aa787a1166e542a14f8045e1.png",
+              "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool5.png"
+            ],
+            "audio": "",
+            "voice": "",
+            "fade": false
+          },
+          {
+            "text": "That's why I built “Dobuki Cutscene Creator.”",
+            "bg": [
+              "https://cdn.dobuki.net/2908d8d9954d0ee3c010d1e608a1e3d3232d414da6d1e6b2b444f8111a8672e9.png",
+              "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool6.png"
+            ],
+            "audio": "",
+            "voice": "",
+            "fade": false
+          },
+          {
+            "text": "It’s for making cutscenes for web games.\nquick, easy, shareable.",
+            "bg": "",
+            "audio": "",
+            "voice": "",
+            "fade": false
+          },
+          {
+            "text": "Build your scene, set your exit link, and share it.",
+            "bg": [
+              "https://cdn.dobuki.net/32a0b5a1a903d01d8a7bd8cb6c9be962c19f8f1125275991ad3012e1f122b6a3.png",
+              "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool7.png"
+            ],
+            "audio": "",
+            "voice": "",
+            "fade": false
+          },
+          {
+            "text": "Boom – you’ve got a dynamic intro for your game!",
+            "bg": [
+              "https://cdn.dobuki.net/2ed9724cbcddec2bc4825d09d7518866683a1eff9cd123ceab9dec49b5e1c269.png",
+              "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool8.png"
+            ],
+            "audio": "",
+            "voice": "",
+            "fade": false
+          },
+          {
+            "text": "Go beyond games.\nUse it to intro a video, an article, your website...",
+            "bg": [
+              "https://cdn.dobuki.net/4db6c1bf6fabf83a1c281949022b28e3a30a016239a4690378309eb0309587b6.png",
+              "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool9.png"
+            ],
+            "audio": "",
+            "voice": "",
+            "fade": false
+          },
+          {
+            "text": "Even make it a comic book, a presentation, a choose-your-own adventure!",
+            "bg": "",
+            "audio": "",
+            "voice": "",
+            "fade": false
+          },
+          {
+            "text": "Have fun creating, and share your scenes! #DobukiCutscene",
+            "bg": [
+              "https://cdn.dobuki.net/2ed61117be4eab0e10ced2b17f7f7ca419575cfc7ae1ca05d425ecb1379f0239.png",
+              "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool10.png"
+            ],
+            "audio": "",
+            "voice": "",
+            "fade": false
+          }
+        ],
+        "created": 1730793729718,
+        "availableImages": [
+          [
+            "https://cdn.dobuki.net/4ef1a31aeea9be3de666f03d1949c2323eeb5144a352e09c0878475b4c46951f.png",
+            "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool1.png"
+          ],
+          [
+            "https://cdn.dobuki.net/e03e89bd1c9cc9e76e2608abf3ca85f89ab15dfbda8d684efe165f6d4cc27483.png",
+            "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool2.png"
+          ],
+          [
+            "https://cdn.dobuki.net/0f881a6912ea9ce9b627856eebdc810684b3792400d9c5f9d2bb1d31bb5db19b.png",
+            "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-cover.png"
+          ],
+          [
+            "https://cdn.dobuki.net/98b63c413ae5c5628df67fde8961910edec5cd17057b17b9c0e5b853d78cf004.png",
+            "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool3.png"
+          ],
+          [
+            "https://cdn.dobuki.net/762a0943cf68b0387956c4051b27ad2d96c277fc015540940ffc67e4e59ec391.png",
+            "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool4.png"
+          ],
+          [
+            "https://cdn.dobuki.net/012a97264f7c90f2d3c2110ebd7841b74cc0f152aa787a1166e542a14f8045e1.png",
+            "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool5.png"
+          ],
+          [
+            "https://cdn.dobuki.net/2908d8d9954d0ee3c010d1e608a1e3d3232d414da6d1e6b2b444f8111a8672e9.png",
+            "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool6.png"
+          ],
+          [
+            "https://cdn.dobuki.net/32a0b5a1a903d01d8a7bd8cb6c9be962c19f8f1125275991ad3012e1f122b6a3.png",
+            "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool7.png"
+          ],
+          [
+            "https://cdn.dobuki.net/2ed9724cbcddec2bc4825d09d7518866683a1eff9cd123ceab9dec49b5e1c269.png",
+            "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool8.png"
+          ],
+          [
+            "https://cdn.dobuki.net/4db6c1bf6fabf83a1c281949022b28e3a30a016239a4690378309eb0309587b6.png",
+            "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool9.png"
+          ],
+          [
+            "https://cdn.dobuki.net/2ed61117be4eab0e10ced2b17f7f7ca419575cfc7ae1ca05d425ecb1379f0239.png",
+            "https://art.dobuki.net/data/image/cutscene/images/default/user/cutscene-tool10.png"
+          ]
+        ],
+        "availableAudio": [],
+        "updated": 1730844783725,
+        "firstScene": "eac721e4-2978-476c-b708-899d671388ca",
+        "title": "Dobuki Cutscene Creator",
+        "externalLink": "https://cutscene.dobuki.net/data/cutscene",
+        "lockKey": "83dc46f6e07662836b6f839616fec2dc1b4fcc11d2c54ef9810657103efcb96d"
+      }
     </script>
     <!-- CUTSCENE -->
     <style>
@@ -348,7 +363,7 @@
         text-shadow: #fc0 1px 0 10px;
         color: #cccccc;
         transition: all 0.5s;
-        height: 100px;
+        height: 60px;
         margin-top: 50px;
         font-family: Speech;
       }
@@ -626,6 +641,9 @@
       >
     </div>
     <script>
+      document.querySelector("#social-media-icons").style.display =
+        window.generatedCutscene ? "block" : "none";
+
       async function getCanonicalCutsceneUrl() {
         function ensureSlash(url) {
           url = url.split("?")[0].split("#")[0];
