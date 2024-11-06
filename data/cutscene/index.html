@@ -12,10 +12,10 @@
       }
     </script>
     <!-- METADATA -->
-    <!-- version: a506f3d0a38642e9a5b8a5cb4d85668c58b178c4cabf4d62fa01ebf97a4ee788 -->
+    <!-- version: cda267cffa6c06052f7c0d2c7c916c2955a19801075270cae0a5be4dfbbccf3c -->
     <script>
       window.canonicalVersion =
-        "a506f3d0a38642e9a5b8a5cb4d85668c58b178c4cabf4d62fa01ebf97a4ee788";
+        "cda267cffa6c06052f7c0d2c7c916c2955a19801075270cae0a5be4dfbbccf3c";
       const finalUrl = "https://cutscene.dobuki.net/data/cutscene";
       if (finalUrl.length && !window.noredirect) {
         function ensureSlash(url) {
@@ -73,10 +73,13 @@ Have fun creating!" />
     <meta property="og:site_name" content="Create your own cutscenes with Dobuki Cutscene Creator" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Create your own cutscenes with Dobuki Cutscene Creator" />
-    <meta name="twitter:description" content="Create your own cutscenes with Dobuki Cutscene Creator.
+    <meta
+      name="description"
+      content="Create your own cutscenes with Dobuki Cutscene Creator.
 You can build a cutscene, host it on the web, and have it go straight to your game.
 Why stop at cutscenes? You could also build presentations, text-adventures, meme flip books...
-Have fun creating!" />
+Have fun creating!"
+    />
     <meta
       name="twitter:image"
       content="https://cdn.dobuki.net/0f881a6912ea9ce9b627856eebdc810684b3792400d9c5f9d2bb1d31bb5db19b.png"
@@ -294,7 +297,8 @@ Have fun creating!",
                 "next": "eac721e4-2978-476c-b708-899d671388ca"
               },
               {
-                "label": "Make your\ncutscene"
+                "label": "Build your\ncutscene",
+                "externalLink": "https://cutscene.dobuki.net/data/empty/#auto-start=1"
               }
             ],
             "choicesCount": 2
@@ -348,7 +352,7 @@ Have fun creating!",
           ]
         ],
         "availableAudio": [],
-        "updated": 1730874130166,
+        "updated": 1730890122292,
         "firstScene": "c71a88dd-17d4-429c-b3c8-216a99180145",
         "title": "Create your own cutscenes with Dobuki Cutscene Creator",
         "lockKey": "83dc46f6e07662836b6f839616fec2dc1b4fcc11d2c54ef9810657103efcb96d"
@@ -392,6 +396,12 @@ Have fun creating!",
         -moz-user-select: none; /* Firefox */
         -ms-user-select: none; /* IE10+/Edge */
         user-select: none; /* Standard */
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
       }
       .asi {
         font-family: Speech;
@@ -568,6 +578,9 @@ Have fun creating!",
               <button type="button" id="prompt-button" class="prompt-button">
                 OK
               </button>
+              <button type="button" id="prompt-clear" class="prompt-button">
+                Clear
+              </button>
               <button type="button" id="prompt-cancel" class="prompt-button">
                 Cancel
               </button>
@@ -581,7 +594,9 @@ Have fun creating!",
       <div style="width: 100%; text-align: center">
         <div id="container" class="container" style="margin-top: 10px">
           <h1 class="title"></h1>
-          <h4 class="author"></h4>
+          <a id="author-link" title="author" target="_blank" href=""
+            ><h4 class="author"></h4
+          ></a>
           <div
             id="game-view"
             class="game-view"
@@ -593,12 +608,13 @@ Have fun creating!",
                 margin-bottom: 15px;
                 display: inline-block;
                 align-self: flex-end;
-                background-color: #ffffffaa;
+                background-color: #444444;
                 text-align: center;
+                font-size: 18px;
                 width: 100%;
               "
             >
-              Press space to watch
+              press space
             </div>
           </div>
           <div id="page" style="color: #999999"></div>
@@ -642,7 +658,13 @@ Have fun creating!",
     <!-- SOCIAL MEDIA -->
     <div
       id="social-media-icons"
-      style="position: absolute; left: 10px; bottom: 10px; color: #aaaaaa"
+      style="
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        color: #aaaaaa;
+        display: none;
+      "
     >
       <div style="font-weight: bold">share:</div>
       <img
@@ -681,9 +703,6 @@ Have fun creating!",
       >
     </div>
     <script>
-      document.querySelector("#social-media-icons").style.display =
-        window.generatedCutscene ? "block" : "none";
-
       async function getCanonicalCutsceneUrl() {
         function ensureSlash(url) {
           url = url.split("?")[0].split("#")[0];
@@ -840,6 +859,7 @@ Have fun creating!",
             const promptLabel = document.getElementById("prompt-label");
             const promptText = document.getElementById("prompt-text");
             const promptButton = document.getElementById("prompt-button");
+            const promptClear = document.getElementById("prompt-clear");
             const promptCancel = document.getElementById("prompt-cancel");
             promptLabel.textContent = message;
             promptText.value = defaultValue;
@@ -850,6 +870,10 @@ Have fun creating!",
             const ok = () => {
               closePrompt();
               resolve(promptText.value);
+            };
+            const clear = () => {
+              promptText.value = "";
+              ok();
             };
             const cancel = () => {
               closePrompt();
@@ -862,11 +886,13 @@ Have fun creating!",
             };
             promptCancel.textContent = options?.cancelLabel ?? "Cancel";
             promptButton.addEventListener("click", ok);
+            promptClear.addEventListener("click", clear);
             promptCancel.addEventListener("click", cancel);
             promptText.addEventListener("keydown", escapeToCancel);
             const closePrompt = () => {
               promptDialog.style.display = "none";
               promptButton.removeEventListener("click", ok);
+              promptClear.removeEventListener("click", clear);
               promptCancel.removeEventListener("click", cancel);
               promptText.removeEventListener("keydown", escapeToCancel);
             };
@@ -926,6 +952,11 @@ Have fun creating!",
     );
     cutSceneData = getCutsceneFromLocalStorage(cutSceneData.id) ?? cutSceneData;
 
+    document.querySelector("#social-media-icons").style.display =
+      window.generatedCutscene && cutSceneData.scenes?.length
+        ? "block"
+        : "none";
+
     const hashParams = location.hash?.startsWith("#")
       ? new URLSearchParams(location.hash.substring(1))
       : new URLSearchParams();
@@ -938,7 +969,7 @@ Have fun creating!",
       const targetPage = parseInt(hashParams.get("page"));
       function findBg(scenes, pageIndex) {
         for (let i = pageIndex; i >= 0; i--) {
-          if (scenes[i].bg) {
+          if (scenes?.[i].bg) {
             return scenes[i].bg;
           }
         }
@@ -968,8 +999,11 @@ Have fun creating!",
 
     {
       document.querySelector(".title").textContent = document.title;
-      document.querySelector(".author").textContent =
-        document.querySelector("meta[name=author]").content;
+      const author = document.querySelector("meta[name=author]").content;
+      document.querySelector(".author").textContent = author;
+      document.querySelector("#author-link").href =
+        "https://x.com/" +
+        (author.startsWith("@") ? author.substring(1) : author);
     }
     if (hashParams.get("auto-start")) {
       startGame();
