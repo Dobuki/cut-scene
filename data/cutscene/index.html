@@ -615,8 +615,11 @@
           color: #888;
           position: absolute;
           width: 100px;
-          bottom: -30px;
-          transition: bottom 0.5s;
+          bottom: 50px;
+          transition: all 0.5s;
+          pointer-events: none;
+          opacity: 0;
+          margin-left: 10px;
         "
       >
         📝 link copied</span
@@ -636,7 +639,7 @@
           canonicalUrl &&
           canonicalUrl !== ensureSlash(window.location.href)
         ) {
-          fetch(canonicalUrl)
+          return await fetch(canonicalUrl)
             .then(async (result) => {
               if (!result.ok) {
                 return;
@@ -683,8 +686,10 @@
           const url = await getCanonicalCutsceneUrl();
           navigator.clipboard.writeText(url);
           document.querySelector("#copied").style.bottom = "10px";
+          document.querySelector("#copied").style.opacity = "1";
           setTimeout(() => {
-            document.querySelector("#copied").style.bottom = "-30px";
+            document.querySelector("#copied").style.bottom = "50px";
+            document.querySelector("#copied").style.opacity = "0";
           }, 3000);
         });
     </script>
@@ -810,6 +815,7 @@
         JSON.parse(document.querySelector("#cutscene-data").textContent),
         window.generatedCutscene
       );
+      document.querySelector("#social-media-icons").style.display = "none";
     };
 
     document.addEventListener("keydown", keyDown);
