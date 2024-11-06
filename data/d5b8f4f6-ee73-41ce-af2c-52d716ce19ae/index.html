@@ -12,10 +12,10 @@
       }
     </script>
     <!-- METADATA -->
-    <!-- version: fed20622384f1e7708d6ea90c5e44c6a39aa150429f4e1e4dd12019fbac06730 -->
+    <!-- version: b72624b84ad72bdd6d09a58300690a418e3ab3f224708a35551ae8d33d5e8b55 -->
     <script>
       window.canonicalVersion =
-        "fed20622384f1e7708d6ea90c5e44c6a39aa150429f4e1e4dd12019fbac06730";
+        "b72624b84ad72bdd6d09a58300690a418e3ab3f224708a35551ae8d33d5e8b55";
       const finalUrl = "https://cutscene.dobuki.net/data/d5b8f4f6-ee73-41ce-af2c-52d716ce19ae";
       if (finalUrl.length && !window.noredirect) {
         function ensureSlash(url) {
@@ -146,7 +146,8 @@
             "text": "Welcome to Bonita Taqueria",
             "audio": "",
             "repeat": false,
-            "fade": true
+            "fade": true,
+            "id": "6a6af00a-ad5a-4573-afc3-1470dc524e76"
           },
           {
             "bg": [
@@ -176,7 +177,22 @@
             "text": "Please come a dine with us.\nWe're located on Chestnut St.",
             "audio": "",
             "voice": "",
-            "fade": false
+            "fade": false,
+            "choices": [
+              {
+                "label": "This cutscene tool is\nneat! Tell me more!",
+                "externalLink": "https://cutscene.dobuki.net/"
+              },
+              {
+                "label": "I want tacos",
+                "externalLink": "https://sfbonita.com/"
+              },
+              {
+                "label": "Go back to\nthe beginning.",
+                "next": "6a6af00a-ad5a-4573-afc3-1470dc524e76"
+              }
+            ],
+            "choicesCount": 3
           }
         ],
         "availableImages": [
@@ -197,7 +213,7 @@
           ]
         ],
         "availableAudio": [],
-        "updated": 1730914625907,
+        "updated": 1730915043866,
         "author": "@jacklehamster",
         "title": "Bonita Taqueria has the best tacos",
         "lockKey": "83dc46f6e07662836b6f839616fec2dc1b4fcc11d2c54ef9810657103efcb96d"
