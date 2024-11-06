@@ -315,6 +315,12 @@
       "sha": "50c9fb9071c6e62cd25347c7860f5d9374696bc5"
     }
   },
+  "/data/empty/dir.json": {
+    "index.html": {
+      "sha": "f9691a24bbf41be6a5f2d228cad354c3c726b004"
+    },
+    "md5": "6d11451b40e92abef1db80c9828e9f75"
+  },
   "/data/intro-cutscene/dir.json": {
     "index.html": {
       "sha": "bf4317b86beb09a1784e2e05896a59c85ed2c076"
