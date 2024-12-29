@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      if (location.hash?.startsWith("#")) {
+        const hashParams = new URLSearchParams(location.hash.substring(1));
+        if (hashParams.get("noredirect")) {
+          window.noredirect = true;
+        }
+      }
+    </script>
+    <!-- METADATA -->
+    <!-- version: de92778f8c748219569347803a55046d491eb2b65f09d7378f26a6fd24e21655 -->
+    <script>
+      window.canonicalVersion =
+        "de92778f8c748219569347803a55046d491eb2b65f09d7378f26a6fd24e21655";
+      const finalUrl = "https://cutscene.dobuki.net/data/3fb94ec1-bcec-4dcf-bd99-4da726a5f948";
+      if (finalUrl.length && !window.noredirect) {
+        function ensureSlash(url) {
+          url = url.split("?")[0].split("#")[0];
+          if (!url.endsWith("/")) {
+            return url + "/";
+          }
+          return url;
+        }
+        const canonicalUrl = ensureSlash(finalUrl);
+        if (canonicalUrl !== ensureSlash(window.location.href)) {
+          fetch(canonicalUrl)
+            .then(async (result) => {
+              if (!result.ok) {
+                return;
+              }
+              const text = await result.text();
+              if (text.includes("version: " + window.canonicalVersion)) {
+                console.log("canonical url is ready");
+                window.location.replace(
+                  canonicalUrl + window.location.search + window.location.hash
+                );
+              }
+            })
+            .catch(() => {
+              console.log("canonical url not ready");
+            });
+        }
+        window.canonicalUrl = canonicalUrl;
+      } else {
+        window.canonicalUrl = location.href;
+      }
+    </script>
+    <title>eyes cheryres</title>
+    <meta
+      name="description"
+      content="merry christmas 2024 let's eat"
+    />
+    <meta name="keywords" content="cutscene" />
+    <meta name="author" content="@Mememme" />
+    <meta
+      property="og:title"
+      content="eyes cheryres"
+    />
+    <meta
+      property="og:description"
+      content="merry christmas 2024 let's eat"
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.dobuki.net/9fdbf517e2d738ea749f1efa2d122b77c959c2e58b41fa81709a4e190a42ee7f.png"
+    />
+    <meta property="og:url" content="https://cutscene.dobuki.net/data/3fb94ec1-bcec-4dcf-bd99-4da726a5f948" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="eyes cheryres" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="eyes cheryres" />
+    <meta
+      name="description"
+      content="merry christmas 2024 let's eat"
+    />
+    <meta
+      name="twitter:image"
+      content="https://cdn.dobuki.net/9fdbf517e2d738ea749f1efa2d122b77c959c2e58b41fa81709a4e190a42ee7f.png"
+    />
+    <meta name="twitter:site" content="@jacklehamster" />
+    <meta name="twitter:creator" content="@Mememme" />
+    <link rel="canonical" href="https://cutscene.dobuki.net/data/3fb94ec1-bcec-4dcf-bd99-4da726a5f948" />
+    <link
+      rel="icon"
+      href="https://cutscene.dobuki.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://cutscene.dobuki.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="https://art.dobuki.net/images/dobuki.png"
+      type="image/png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://art.dobuki.net/images/dobuki.png"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "eyes cheryres",
+        "description": "merry christmas 2024 let's eat",
+        "url": "https://cutscene.dobuki.net/data/3fb94ec1-bcec-4dcf-bd99-4da726a5f948",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://cdn.dobuki.net/9fdbf517e2d738ea749f1efa2d122b77c959c2e58b41fa81709a4e190a42ee7f.png",
+          "width": 1000,
+          "height": 600
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Dobuki Studio",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://art.dobuki.net/images/dobuki.png",
+            "width": 600,
+            "height": 600
+          }
+        }
+      }
+    </script>
+    <!-- METADATA -->
+    <!-- CUTSCENE -->
+    <script>
+      window.generatedCutscene = true;
+    </script>
+    <script type="application/json" id="cutscene-data">
+      {
+        "id": "3fb94ec1-bcec-4dcf-bd99-4da726a5f948",
+        "created": 1735531795220,
+        "scenes": [
+          {
+            "bg": [
+              "https://cdn.dobuki.net/9fdbf517e2d738ea749f1efa2d122b77c959c2e58b41fa81709a4e190a42ee7f.png",
+              "https://dobuki.github.io/art-depot/data/image/cutscene/images/3fb94ec1-bcec-4dcf-bd99-4da726a5f948/default/user/pngtree-merry-christmas-2024-hand-drawn-colorful-vector-transparent-background-image-png-image_13535259.png"
+            ],
+            "text": "merry christmas 2024 let's eat",
+            "audio": "",
+            "repeat": false,
+            "fade": true,
+            "webFont": "Palatino Linotype, serif",
+            "wait": 500,
+            "choices": [
+              {
+                "label": "Choice 1"
+              }
+            ],
+            "choicesCount": 1
+          },
+          {
+            "bg": [
+              "https://cdn.dobuki.net/9fdbf517e2d738ea749f1efa2d122b77c959c2e58b41fa81709a4e190a42ee7f.png",
+              "https://dobuki.github.io/art-depot/data/image/cutscene/images/3fb94ec1-bcec-4dcf-bd99-4da726a5f948/default/user/pngtree-merry-christmas-2024-hand-drawn-colorful-vector-transparent-background-image-png-image_13535259.png"
+            ],
+            "text": "yes yes yes",
+            "audio": "",
+            "voice": "",
+            "fade": false
+          }
+        ],
+        "availableImages": [
+          [
+            "https://art.dobuki.net/images/img-up.png"
+          ],
+          [
+            "https://cdn.dobuki.net/9fdbf517e2d738ea749f1efa2d122b77c959c2e58b41fa81709a4e190a42ee7f.png",
+            "https://dobuki.github.io/art-depot/data/image/cutscene/images/3fb94ec1-bcec-4dcf-bd99-4da726a5f948/default/user/pngtree-merry-christmas-2024-hand-drawn-colorful-vector-transparent-background-image-png-image_13535259.png"
+          ]
+        ],
+        "availableAudio": [],
+        "updated": 1735531942099,
+        "author": "@Mememme",
+        "title": "eyes cheryres",
+        "lockKey": "2dd6ef037dcb6e13a89fa53a12d494dda599219619bdfc54c0de74ffdb7a5a1e"
+      }
+    </script>
+    <!-- CUTSCENE -->
+    <style>
+      .gradient-text {
+        font-size: 30px;
+        font-weight: bold;
+        background: linear-gradient(to bottom, #ffaaaa, #6633ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      @font-face {
+        font-family: "Coffee";
+        src: url(https://cutscene.dobuki.net/fonts/Gluten-Bold.otf)
+          format("opentype");
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Gameboy";
+        src: url(https://cutscene.dobuki.net/fonts/early-gameboy.ttf)
+          format("truetype");
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Speech";
+        src: url(https://cutscene.dobuki.net/fonts/cat-comic.ttf)
+          format("truetype");
+        font-display: swap;
+      }
+      html::-webkit-scrollbar {
+        display: none;
+      }
+      body {
+        margin: 0;
+        background-color: #0e0007;
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .asi {
+        font-family: Speech;
+      }
+      .title {
+        padding: 0;
+        text-shadow: #fc0 1px 0 10px;
+        color: #cccccc;
+        transition: all 0.5s;
+        margin-top: 50px;
+        height: 40px;
+        font-family: Speech;
+      }
+      .author {
+        margin: 0;
+        padding: 0;
+        color: #999999;
+        height: 30px;
+        margin-top: 30px;
+        transition: all 0.5s;
+      }
+      .cut-scene {
+        margin: auto;
+        width: 600px;
+        height: 360px;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+        display: flex;
+        transition: opacity 1s;
+        font-size: 16pt;
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+        border-radius: 25px;
+        /*background-image: url(https://art.dobuki.net/images/dobuki.png);*/
+        background-size: 60%;
+        font-family: Speech;
+      }
+      h4,
+      h3,
+      h2,
+      h1 {
+        margin: 5;
+      }
+      .important {
+        font-weight: bold;
+        color: black;
+        text-transform: uppercase;
+      }
+      .container {
+        border-radius: 25px;
+        background-color: black;
+        width: 600px;
+        height: 360px;
+        margin: auto;
+        transition: all 0.5s;
+      }
+      .game-view {
+        width: 100%;
+        height: 100%;
+      }
+      .prompt-dialog {
+        font-family: Speech;
+        font-size: 16pt;
+        background-color: #cccccc;
+        padding: 20px 40px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+        text-align: center;
+        cursor: move;
+        position: absolute;
+      }
+      .prompt-text {
+        pointer-events: none;
+      }
+      .prompt-button {
+        width: 120px;
+      }
+      #press-key {
+        transition: opacity 0.2s;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+    <script>
+      window.cutsceneMode = true;
+    </script>
+    <script>
+      async function fetchAndDecompress(url, backupUrl) {
+        try {
+          // Fetch the compressed file
+          const response = await fetch(url);
+          const compressedData = await response.arrayBuffer();
+
+          // Decompress the file using pako (for Gzip)
+          const decompressedData = pako.ungzip(new Uint8Array(compressedData));
+
+          // Create a Blob from the decompressed data
+          const blob = new Blob([decompressedData], {
+            type: "application/javascript",
+          });
+
+          // Create a Blob URL
+          return URL.createObjectURL(blob);
+        } catch (err) {
+          console.warn("Error fetching or decompressing file:", err);
+          if (backupUrl) {
+            const decompressedData = await fetch(backupUrl).then((response) =>
+              response.blob()
+            );
+            // Create a Blob from the decompressed data
+            const blob = decompressedData;
+
+            // Create a Blob URL
+            return URL.createObjectURL(blob);
+          }
+        }
+      }
+      var sourceUrlPromise = fetchAndDecompress(
+        window.generatedCutscene
+          ? "https://cutscene.dobuki.net/data/index.bin"
+          : "dist/index.bin"
+      );
+    </script>
+  </head>
+  <body>
+    <div
+      id="prompter"
+      style="display: none"
+      onmousedown="event.stopPropagation()"
+      onmouseup="event.stopPropagation()"
+      onkeydown="event.stopPropagation()"
+      onkeyup="event.stopPropagation()"
+    >
+      <div
+        style="
+          position: fixed;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 999;
+          width: 100vw;
+          height: 100vh;
+          top: 0;
+          left: 0;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+          "
+        >
+          <div class="prompt-dialog">
+            <div style="pointer-events: none">
+              <label id="prompt-label" for="prompt-text">Enter text</label>
+            </div>
+            <div>
+              <textarea
+                style="
+                  width: 300px;
+                  height: 100px;
+                  border-radius: 10px;
+                  padding: 5px;
+                "
+                id="prompt-text"
+                placeholder="Enter your text"
+              ></textarea>
+            </div>
+            <div>
+              <button type="button" id="prompt-button" class="prompt-button">
+                OK
+              </button>
+              <button type="button" id="prompt-clear" class="prompt-button">
+                Clear
+              </button>
+              <button type="button" id="prompt-cancel" class="prompt-button">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="press-key">
+      <div style="width: 100%; text-align: center">
+        <div id="container" class="container" style="margin-top: 10px">
+          <h1 class="title"></h1>
+          <a id="author-link" title="author" target="_blank" href=""
+            ><h4 class="author"></h4
+          ></a>
+          <div
+            id="game-view"
+            class="game-view"
+            style="opacity: 0; display: none"
+          ></div>
+          <div class="cut-scene" id="cut-scene" style="opacity: 0">
+            <div
+              style="
+                margin-bottom: 15px;
+                display: inline-block;
+                align-self: flex-end;
+                background-color: #444444;
+                text-align: center;
+                font-size: 18px;
+                width: 100%;
+              "
+            >
+              press space
+            </div>
+          </div>
+          <div id="page" style="color: #999999"></div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="brand"
+      style="
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        display: none;
+        flex-direction: row;
+        font-family: Coffee;
+      "
+    >
+      <a
+        rel="noopener"
+        target="_blank"
+        href="https://cutscene.dobuki.net/data/empty/#auto-start=1"
+      >
+        <img
+          style="width: 50px; height: 50px"
+          alt="dobuki-logo"
+          src="https://cutscene.dobuki.net/social/dobuki-100.png"
+        />
+      </a>
+      <h1
+        style="
+          position: absolute;
+          left: 55px;
+          top: 0px;
+          margin: 0;
+          margin-left: 5px;
+          white-space: nowrap;
+          pointer-events: none;
+        "
+        class="gradient-text"
+      >
+        Dobuki Cutscene Creator
+      </h1>
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+    <div
+      id="social-media-icons"
+      style="
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        color: #aaaaaa;
+        display: none;
+      "
+    >
+      <div style="font-weight: bold">share:</div>
+      <img
+        id="social-media-x-icon"
+        alt="X"
+        style="width: 20px; height: 20px; cursor: pointer"
+        src="https://art.dobuki.net/social-media/x-icon.png"
+      />
+      <img
+        id="social-media-reddit-icon"
+        alt="reddit"
+        style="width: 20px; height: 20px; cursor: pointer"
+        src="https://art.dobuki.net/social-media/reddit.png"
+      />
+      <img
+        id="social-media-link-icon"
+        alt="link"
+        style="width: 20px; height: 20px; cursor: pointer"
+        src="https://art.dobuki.net/images/link.png"
+      />
+      <span
+        id="copied"
+        style="
+          font-size: 10pt;
+          color: #888;
+          position: absolute;
+          width: 100px;
+          bottom: 50px;
+          transition: all 0.5s;
+          pointer-events: none;
+          opacity: 0;
+          margin-left: 10px;
+        "
+      >
+        📝 link copied</span
+      >
+    </div>
+    <script>
+      async function getCanonicalCutsceneUrl() {
+        function ensureSlash(url) {
+          url = url.split("?")[0].split("#")[0];
+          if (!url.endsWith("/")) {
+            return url + "/";
+          }
+          return url;
+        }
+        const canonicalUrl = window.canonicalUrl;
+        if (
+          canonicalUrl &&
+          canonicalUrl !== ensureSlash(window.location.href)
+        ) {
+          return await fetch(canonicalUrl)
+            .then(async (result) => {
+              if (!result.ok) {
+                return;
+              }
+              const text = await result.text();
+              if (text.includes(`version: ${window.canonicalVersion}`)) {
+                console.log("canonical url is ready");
+                return canonicalUrl;
+              }
+            })
+            .catch(() => {
+              console.log("canonical url not ready");
+            });
+        }
+        return window.location.href;
+      }
+      document
+        .querySelector("#social-media-x-icon")
+        .addEventListener("click", async () => {
+          const url = await getCanonicalCutsceneUrl();
+          const text = document.title;
+          const hashtags = "DobukiCutscene";
+          const via = "jacklehamster";
+          const shareUrl = `https://x.com/intent/tweet?url=${encodeURIComponent(
+            url
+          )}&text=${encodeURIComponent(text)}&hashtags=${encodeURIComponent(
+            hashtags
+          )}&via=${encodeURIComponent(via)}`;
+          window.open(shareUrl, "_blank");
+        });
+      document
+        .querySelector("#social-media-reddit-icon")
+        .addEventListener("click", async () => {
+          const url = await getCanonicalCutsceneUrl();
+          const title = document.title;
+          const shareUrl = `https://www.reddit.com/submit?url=${encodeURIComponent(
+            url
+          )}&title=${encodeURIComponent(title)}`;
+          window.open(shareUrl, "_blank");
+        });
+      document
+        .querySelector("#social-media-link-icon")
+        .addEventListener("click", async () => {
+          const url = await getCanonicalCutsceneUrl();
+          navigator.clipboard.writeText(url);
+          document.querySelector("#copied").style.bottom = "10px";
+          document.querySelector("#copied").style.opacity = "1";
+          setTimeout(() => {
+            document.querySelector("#copied").style.bottom = "50px";
+            document.querySelector("#copied").style.opacity = "0";
+          }, 3000);
+        });
+    </script>
+    <!-- SOCIAL MEDIA -->
+  </body>
+  <script id="cut-scene-code" type="module">
+    const module = await import(await sourceUrlPromise);
+    const {
+      createSuperNaturalPowerTrollGame,
+      newgrounds,
+      prepareUrls,
+      u,
+      revoke,
+      handleGamePad,
+      fetchJsonFile,
+      fetchUserJsonFile,
+      listFiles,
+      canPlayMP3,
+      canPlayOGG,
+      getAllOverlays,
+      compress,
+      extract,
+    } = module;
+
+    const cs = document.getElementById("cut-scene");
+    cs.style.opacity = 1;
+    let transitioning = false;
+
+    let currentAudio;
+    let audioPlaying;
+
+    const keyDown = (e) => {
+      switch (e.code) {
+        case "Enter":
+          startGame(0);
+          break;
+        case "Space":
+          startGame(1);
+          break;
+      }
+    };
+    const onClick = () => {
+      startGame();
+    };
+
+    const startGame = async () => {
+      document.removeEventListener("keydown", keyDown);
+      const cutSceneDiv = document.getElementById("cut-scene");
+      cutSceneDiv.parentElement.removeChild(cutSceneDiv);
+
+      const gameView = document.getElementById("game-view");
+      const container = document.getElementById("container");
+      container.style.width = "100vw";
+      container.style.height = "100vh";
+      container.style.borderRadius = "0px";
+      container.style.marginTop = "0";
+      gameView.style.display = "";
+
+      document.querySelector(".title").style.opacity = 0;
+      document.querySelector(".title").style.margin = 0;
+      document.querySelector(".title").style.height = 0;
+
+      document.querySelector(".author").style.opacity = 0;
+      document.querySelector(".author").style.margin = 0;
+      document.querySelector(".author").style.height = 0;
+
+      document.querySelector("#press-key").style.opacity = 0;
+      setTimeout(() => {
+        document.querySelector("#press-key").style.opacity = 1;
+      }, 800);
+
+      const activatePlayer = () => {};
+      const audioExt = "mp3";
+      window.game = await createSuperNaturalPowerTrollGame(
+        undefined,
+        "save",
+        undefined,
+        gameView,
+        async (url) => fetch(url).then((r) => r.text()),
+        activatePlayer,
+        audioExt,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        fetchUserJsonFile,
+        async (message, defaultValue, options) => {
+          return new Promise((resolve) => {
+            const promptDialog = document.getElementById("prompter");
+            const promptLabel = document.getElementById("prompt-label");
+            const promptText = document.getElementById("prompt-text");
+            const promptButton = document.getElementById("prompt-button");
+            const promptClear = document.getElementById("prompt-clear");
+            const promptCancel = document.getElementById("prompt-cancel");
+            promptLabel.textContent = message;
+            promptText.value = defaultValue;
+            promptText.placeholder = options?.placeholder ?? "";
+            promptDialog.style.display = "block";
+            promptText.focus();
+            promptText.select();
+            const ok = () => {
+              closePrompt();
+              resolve(promptText.value);
+            };
+            const clear = () => {
+              promptText.value = "";
+              ok();
+            };
+            const cancel = () => {
+              closePrompt();
+              resolve(null);
+            };
+            const escapeToCancel = () => {
+              if (event.key === "Escape") {
+                cancel();
+              }
+            };
+            promptCancel.textContent = options?.cancelLabel ?? "Cancel";
+            promptButton.addEventListener("click", ok);
+            promptClear.addEventListener("click", clear);
+            promptCancel.addEventListener("click", cancel);
+            promptText.addEventListener("keydown", escapeToCancel);
+            const closePrompt = () => {
+              promptDialog.style.display = "none";
+              promptButton.removeEventListener("click", ok);
+              promptClear.removeEventListener("click", clear);
+              promptCancel.removeEventListener("click", cancel);
+              promptText.removeEventListener("keydown", escapeToCancel);
+            };
+          });
+        },
+        [],
+        undefined,
+        false,
+        compress,
+        extract,
+        cutSceneData,
+        window.generatedCutscene
+      );
+      document.querySelector("#social-media-icons").style.display = "none";
+    };
+
+    document.addEventListener("keydown", keyDown);
+    document.querySelector("#cut-scene").addEventListener("click", onClick);
+    document.fonts.load('12pt "Gameboy"');
+
+    {
+      const dialog = document.querySelector(".prompt-dialog");
+      let pointDown = null;
+      const point = { x: 0, y: 0 };
+      dialog.addEventListener("mousedown", (e) => {
+        pointDown = { x: e.clientX, y: e.clientY };
+        point.x = dialog.offsetLeft;
+        point.y = dialog.offsetTop;
+        e.stopPropagation();
+      });
+      dialog.addEventListener("mousemove", (e) => {
+        if (e.buttons === 1 && e.target === dialog && pointDown) {
+          const diffX = e.clientX - pointDown.x;
+          const diffY = e.clientY - pointDown.y;
+          dialog.style.left = `${point.x + diffX}px`;
+          dialog.style.top = `${point.y + diffY}px`;
+          e.stopPropagation();
+        }
+        if (!e.buttons) {
+          pointDown = null;
+        }
+      });
+    }
+
+    //  Check if the cutscene has been saved in the local storage
+    function getCutsceneFromLocalStorage(id) {
+      if (!id) {
+        return undefined;
+      }
+      const cutSceneDatas = JSON.parse(
+        localStorage.getItem("saved-cutscenes") ?? "{}"
+      );
+      return cutSceneDatas[id];
+    }
+    let cutSceneData = JSON.parse(
+      document.querySelector("#cutscene-data").textContent
+    );
+
+    //  if there's no cutscene data, try to get it from localStorage
+    if (!cutSceneData.id) {
+      const newSceneIds = JSON.parse(
+        localStorage.getItem("new-cutscene-ids") ?? "[]"
+      );
+      if (newSceneIds.length) {
+        cutSceneData.id = newSceneIds[newSceneIds.length - 1];
+      }
+    }
+
+    cutSceneData = getCutsceneFromLocalStorage(cutSceneData.id) ?? cutSceneData;
+
+    document.querySelector("#social-media-icons").style.display =
+      window.generatedCutscene && cutSceneData.scenes?.length
+        ? "block"
+        : "none";
+
+    const hashParams = location.hash?.startsWith("#")
+      ? new URLSearchParams(location.hash.substring(1))
+      : new URLSearchParams();
+    if (hashParams) {
+      history.replaceState(null, "", location.href.split("#")[0]);
+    }
+
+    {
+      //  Check if the hash contains a page number
+      const targetPage = parseInt(hashParams.get("page"));
+      function findBg(scenes, pageIndex) {
+        for (let i = pageIndex; i >= 0; i--) {
+          if (scenes?.[i].bg) {
+            return scenes[i].bg;
+          }
+        }
+      }
+
+      const bg = findBg(cutSceneData.scenes, targetPage ? targetPage - 1 : 0);
+      if (bg) {
+        const bgs = Array.isArray(bg) ? bg : [bg];
+        const background = location.href.startsWith("https://cdn.dobuki.net/")
+          ? bgs[0]
+          : bgs[bgs.length - 1];
+        document.querySelector(
+          "#cut-scene"
+        ).style.backgroundImage = `url(${background})`;
+      }
+      document.querySelector("#page").textContent = targetPage
+        ? `Page ${targetPage} / ${cutSceneData.scenes.length}`
+        : "";
+    }
+
+    //  Check if the hash contains a passKey
+    const passKey = hashParams.get("passKey");
+    if (passKey) {
+      const keys = JSON.parse(localStorage.getItem("cutscene-keys") ?? "{}");
+      keys[passKey] = Date.now();
+      localStorage.setItem("cutscene-keys", JSON.stringify(keys));
+    }
+
+    {
+      document.querySelector(".title").textContent = document.title;
+      const author = document.querySelector("meta[name=author]").content;
+      document.querySelector(".author").textContent = author;
+      document.querySelector("#author-link").href =
+        "https://x.com/" +
+        (author.startsWith("@") ? author.substring(1) : author);
+    }
+    if (hashParams.get("auto-start")) {
+      startGame();
+    }
+  </script>
+</html>
